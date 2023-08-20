@@ -1,0 +1,87 @@
+<div
+  class="{{
+    isActive('people') ? 'tw-bg-[#F0EEF4]' : 'tw-bg-white'
+  }} tw-text-white tw-relative tw-h-full"
+>
+  <!-- <div  style="background-image: url(../../../assets/icons/aboutbg.png);background-size:cover;">
+
+  </div> -->
+  <!-- <img *ngIf="isActive('about') && activeIndex == 0" src="assets/icons/aboutbg.png"
+    class="tw-ml-auto tw-mr-auto tw-left-0 tw-right-0 tw-text-center tw-absolute tw-top-[-11vh] tw-h-[128vh] tw-w-[128vh]" alt="" srcset="">
+  <img *ngIf="isActive('about') && activeIndex == 0" src="assets/icons/about.png"
+    class="tw-ml-auto tw-mr-auto tw-left-0 tw-right-0 tw-text-center tw-absolute tw-top-[10vh] tw-h-[86vh] tw-w-[86vh]" alt="" srcset=""> -->
+
+  <div
+    *ngIf="
+      !isActive('contact') &&
+      !isActive('terms') &&
+      !isActive('privacy') &&
+      !isActive('partner') &&
+      !isActive('people')
+    "
+    class="tw-flex tw-left-[80px] tw-bottom-[2vh] md:tw-bottom-[4vh] tw-absolute tw-items-end tw-z-[2]"
+  >
+    <div
+      routerLink="/about"
+      class="{{
+        isActive('about')
+          ? 'tw-font-bold tw-text-[#1A82E3] tw-mb-2'
+          : 'tw-font-normal tw-text-[#9A9A9A]'
+      }}"
+    >
+      <div
+        class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-text-[11px] md:tw-text-[16px] tw-cursor-pointer tw-mr-[3vw] lg:tw-mr-[2vw]"
+      >
+        ABOUT US
+      </div>
+      <div
+        *ngIf="isActive('about')"
+        class="tw-h-[3px] tw-bg-[red] tw-w-[30%]"
+      ></div>
+    </div>
+    <div
+      routerLink="/needfor"
+      class="{{
+        isActive('needfor')
+          ? 'tw-font-bold tw-text-[#1A82E3] tw-mb-2'
+          : 'tw-font-normal tw-text-[#9A9A9A]'
+      }}"
+    >
+      <div
+        class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-text-[11px] md:tw-text-[16px] tw-cursor-pointer tw-mr-[3vw] lg:tw-mr-[2vw]"
+      >
+        THE NEED FOR Z21
+      </div>
+      <div
+        *ngIf="isActive('needfor')"
+        class="tw-h-[3px] tw-bg-[red] tw-w-[30%]"
+      ></div>
+    </div>
+    <div
+      routerLink="/zerotoone"
+      class="{{
+        isActive('zerotoone')
+          ? 'tw-font-bold tw-text-[#1A82E3] tw-mb-2'
+          : 'tw-font-normal tw-text-[#9A9A9A]'
+      }}"
+    >
+      <div
+        class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-text-[11px] md:tw-text-[16px] tw-cursor-pointer tw-mr-[3vw] lg:tw-mr-[2vw]"
+      >
+        ZERO TO ONE HEALTHCARE
+      </div>
+      <div
+        *ngIf="isActive('zerotoone')"
+        class="tw-h-[3px] tw-bg-[red] tw-w-[30%]"
+      ></div>
+    </div>
+    <!-- <div routerLink="/people" class="{{isActive('people')? 'tw-font-bold tw-text-[#1A82E3] tw-mb-2':'tw-font-normal tw-text-[#9A9A9A]'}}">
+      <div class="tw-text-[11px] md:tw-text-[16px] tw-cursor-pointer ">
+        OUR PEOPLE</div>
+      <div *ngIf="isActive('people')" class="tw-h-[3px] tw-bg-[red] tw-w-[30%]"></div>
+    </div> -->
+  </div>
+
+  <!-- main content -->
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,133 @@
+<div class="tw-bg-white tw-text-white tw-relative tw-h-full">
+  <!-- <div
+    *ngIf="!isActive('diabetic')"
+    style="
+      background-image: url('../assets/icons/bgdots.png');
+      background-size: cover;
+    "
+    class="tw-h-[11vh] tw-w-[24%] md:tw-w-[27%] md:tw-h-[14vh] tw-left-0 tw-bottom-[10vh] tw-z-[2] tw-hidden md:tw-block tw-absolute"
+  ></div> -->
+  <div
+    class="tw-flex tw-left-[80px] tw-bottom-[2vh] md:tw-bottom-[4vh] tw-absolute tw-items-end tw-z-[2]"
+  >
+    <div
+      routerLink="/oxynow"
+      class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] {{
+        isActive('oxynow')
+          ? 'tw-font-bold tw-text-[#1A82E3] tw-mb-2'
+          : 'tw-font-normal tw-text-[#9A9A9A]'
+      }}"
+    >
+      <div
+        class="tw-text-[11px] md:tw-text-[16px] tw-cursor-pointer tw-mr-[3vh]"
+      >
+        OXYNOW
+      </div>
+      <div
+        *ngIf="isActive('oxynow')"
+        class="tw-h-[3px] tw-bg-[red] tw-w-[30%]"
+      ></div>
+    </div>
+    <div
+      routerLink="/oraican"
+      class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] {{
+        isActive('oraican')
+          ? 'tw-font-bold tw-text-[#1A82E3] tw-mb-2'
+          : 'tw-font-normal tw-text-[#9A9A9A]'
+      }}"
+    >
+      <div
+        class="tw-text-[11px] md:tw-text-[16px] tw-cursor-pointer tw-mr-[3vh]"
+      >
+        ORAICAN
+      </div>
+      <div
+        *ngIf="isActive('oraican')"
+        class="tw-h-[3px] tw-bg-[red] tw-w-[30%]"
+      ></div>
+    </div>
+    <!-- <div
+      routerLink="/diabetic"
+      class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] {{
+        isActive('diabetic')
+          ? 'tw-font-bold tw-text-[#1A82E3] tw-mb-2'
+          : 'tw-font-normal tw-text-[#9A9A9A]'
+      }}"
+    >
+      <div class="tw-text-[11px] md:tw-text-[16px] tw-cursor-pointer">
+        DIABETIC NEUROPATHY
+      </div>
+      <div
+        *ngIf="isActive('diabetic')"
+        class="tw-h-[3px] tw-bg-[red] tw-w-[30%]"
+      ></div>
+    </div> -->
+  </div>
+
+  <div
+    *ngIf="!isActive('diabetic')"
+    class="tw-w-full tw-flex tw-flex-col tw-h-full tw-pl-[16px] lg:tw-pl-[80px]"
+  >
+    <div
+      class="tw-flex tw-justify-between tw-items-center tw-h-[10%] lg:tw-h-[20vh] tw-pr-3 lg:tw-pr-[68px]"
+    >
+      <div>
+        <img
+          src="assets/icons/logoblue.png"
+          routerLink="/home"
+          class="tw-w-[118px] md:tw-w-[219px] tw-cursor-pointer"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div
+        class="tw-mr-3 md:tw-mr-[68px] tw-h-[60px] tw-w-[60px] tw-items-center tw-justify-center tw-flex !tw-rounded-full tw-cursor-pointer hover:tw-bg-[#e5e5ee] hover:tw-bg-opacity-[1] tw-transition-all tw-duration-[0.3s]"
+        (click)="openNavbar()"
+      >
+        <img
+          src="assets/icons/menu.png"
+          button
+          class="tw-w-[25px] md:tw-w-[36px] tw-h-[11px] md:tw-h-[16px]"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="tw-h-[90%] lg:tw-h-[80vh]">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div
+    *ngIf="isActive('diabetic')"
+    class="tw-w-full tw-flex tw-flex-col tw-h-full"
+  >
+    <div
+      class="tw-flex tw-pl-[16px] lg:tw-pl-[80px] tw-w-[100vw] tw-absolute tw-z-[2] tw-justify-between tw-items-center tw-h-[10%] lg:tw-h-[20vh] tw-pr-3 lg:tw-pr-[68px]"
+    >
+      <div>
+        <img
+          src="assets/icons/logoblue.png"
+          routerLink="/home"
+          class="tw-w-[118px] md:tw-w-[219px] tw-cursor-pointer"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div
+        class="tw-mr-3 md:tw-mr-[68px] tw-h-[60px] tw-w-[60px] tw-items-center tw-justify-center tw-flex !tw-rounded-full tw-cursor-pointer hover:tw-bg-[#e5e5ee] hover:tw-bg-opacity-[0.95] tw-transition-all tw-duration-[0.3s]"
+        (click)="openNavbar()"
+      >
+        <img
+          src="assets/icons/menu.png"
+          button
+          class="tw-w-[25px] md:tw-w-[36px] tw-h-[11px] md:tw-h-[16px]"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="tw-h-[100%] lg:tw-h-[100vh] tw-pl-[16px] lg:tw-pl-[80px]">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

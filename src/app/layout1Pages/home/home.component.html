@@ -1,0 +1,204 @@
+<swiper #swiper [config]="config" [loop]="true" (slideChange)="slideChange($event)" [creativeEffect]="{
+    prev: {
+      shadow: true,
+      translate: [0, 0, -400]
+    },
+    next: {
+      translate: ['100%', 0, 0]
+    }
+  }">
+  <!-- slide 1 -->
+  <ng-template swiperSlide let-data>
+    <div class="tw-bg-black tw-grow">
+      <div class="tw-flex tw-flex-col lg:tw-flex-row tw-h-full">
+        <div class="tw-w-full tw-h-full tw-relative tw-flex tw-items-start tw-justify-start tw-flex-col">
+          <div 
+            class="tw-text-white tw-z-[1] tw-font-light tw-leading-[6vh] lg:tw-leading-[7vw] tw-h-auto tw-text-[5.5vh] lg:tw-text-[6vw]">
+            The next leap in healthcare is being
+            <br />
+            <span class="tw-font-bold">{{title2}}</span>
+          </div>
+
+          <div class="tw-flex tw-justify-start tw-mt-[6vw] tw-h-auto tw-z-[1] tw-w-full tw-text-white tw-relative">
+            <div class="tw-w-[12vh] tw-font-light lg:tw-w-[18vh] tw-text-[2vh] lg:tw-text-[2.5vh]">
+              Preventive
+              <br />
+              screenings
+            </div>
+            <div
+              class="tw-w-[12vh] tw-font-light lg:tw-w-[18vh] tw-flex tw-justify-start tw-pl-[20px] lg:tw-pl-[30px] tw-text-[2vh] lg:tw-text-[2.5vh]"
+              style="
+                border-left: 1px solid white;
+                border-right: 1px solid white;
+              ">
+              Early
+              <br />
+              diagnosis
+            </div>
+            <div
+              class="tw-w-[12vh] tw-font-light lg:tw-w-[18vh] tw-flex tw-justify-start tw-pl-[20px] lg:tw-pl-[30px] tw-text-[2vh] lg:tw-text-[2.5vh]">
+              Solutions
+              <br />
+              at scale
+            </div>
+
+            <img (click)="nextSlide()"
+              class="tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-h-[9vh] tw-cursor-pointer tw-w-[11vh] lg:tw-h-[10vh] lg:tw-w-[12vh] tw-right-[3%] md:tw-right-[68px] lg:tw-right-[17%] -tw-bottom-[60px] lg:tw-bottom-[80px] tw-absolute"
+              src="assets/icons/test.webp" alt="" srcset=""/>
+            <!-- <img
+              class="toandFro tw-h-[3vh] tw-cursor-pointer tw-w-[5vh] lg:tw-h-[3vh] lg:tw-w-[4vh] tw-right-[3%] md:tw-right-[68px] lg:tw-right-[24%] -tw-bottom-[60px] lg:tw-bottom-[90px] tw-absolute"
+              src="assets/icons/ar_frwrd.png"
+              alt=""
+            /> -->
+          </div>
+
+          <div class="tw-flex tw-mt-[25px] lg:tw-mt-[60px]">
+            <div class="tw-border-b-2 tw-border-white tw-h-[2px] {{
+                data.isActive ? 'tw-w-8' : 'tw-w-2'
+              }} tw-ml-1"></div>
+            <div class="tw-border-b-2 tw-border-[#FFFFFF33] tw-h-[2px] tw-w-2 tw-ml-1"></div>
+            <div class="tw-border-b-2 tw-border-[#FFFFFF33] tw-h-[2px] tw-w-2 tw-ml-1"></div>
+          </div>
+
+          <div
+            class="tw-top-[-1w] tw-z-[0] tw-right-[15%] lg:tw-h-[51vh] 1100:tw-h-[51vh] tw-w-[5vw] tw-bg-[#040510] tw-absolute">
+          </div>
+        </div>
+        <div class="tw-w-full tw-h-screen tw-flex tw-justify-center lg:tw-justify-start tw-items-start tw-relative">
+          <img
+          id="img1"
+            class="tw-w-full tw-max-w-[44vh] lg:tw-max-w-[72vh] tw-mt-[7vh] lg:tw-mt-0 tw-absolute tw-right-0 tw-m-auto lg:tw-m-0 tw-left-[-20px] lg:tw-left-[-18%]"
+            src="assets/icons/mobile2.gif"/>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <!-- slide 2 -->
+  <ng-template swiperSlide let-data>
+    <div class="tw-bg-black tw-grow">
+      <div class="tw-flex tw-flex-col lg:tw-flex-row tw-h-full">
+        <div class="tw-w-full tw-h-full tw-relative tw-flex tw-items-start tw-justify-start tw-flex-col">
+          <div *ngIf="sliderIndex==1"
+            class="tw-text-white tw-z-[1] tw-font-light tw-leading-[6vh] lg:tw-leading-[7vw] tw-h-auto tw-text-[5.5vh] lg:tw-text-[6vw]">
+            <span>
+              Founded by
+            </span>
+            <br />
+            <span class="tw-font-bold lg:tw-h-48 tw-block">{{title}}</span>
+          </div>
+
+          <div class="tw-flex tw-justify-start tw-mt-[6vw] tw-h-auto tw-z-[1] tw-w-full tw-text-white tw-relative">
+            <div class="tw-w-[10vh] tw-font-light lg:tw-w-[12vh] tw-text-[2vh] lg:tw-text-[2.5vh]">
+              <span class="!tw-text-[3vh] tw-font-medium lg:!tw-text-[4vh] tw-font-bold tw-leading-none">
+                5
+              </span>
+              <br />
+              experts
+            </div>
+            <div
+              class="tw-w-[10vh] tw-font-light lg:tw-w-[12vh] tw-text-start tw-pl-[20px] lg:tw-pl-[30px] tw-text-[2vh] lg:tw-text-[2.5vh]"
+              style="border-left: 1px solid white;">
+              <span class="!tw-text-[3vh] tw-font-medium lg:!tw-text-[4vh] tw-font-bold tw-leading-none">
+                150+
+              </span>
+              <br />
+              years
+            </div>
+
+            <!-- <img
+              (click)="nextSlide()"
+              class="tw-h-[9vhopactw-opacity-[0.7]w-transform tw-transition-all tw-duration-[0.3s] tw-cursor-pointer tw-w-[11vh] lg:tw-h-[12vh] lg:tw-w-[15vh] tw-right-[3%] md:tw-right-[68px] lg:tw-right-[17%] -tw-bottom-[60px] lg:tw-bottom-[46px] tw-absolute"
+              src="assets/icons/arrowbutton.png"
+              alt=""
+              srcset=""
+            /> -->
+            <img (click)="nextSlide()"
+              class="tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-h-[9vh] tw-cursor-pointer tw-w-[11vh] lg:tw-h-[10vh] lg:tw-w-[12vh] tw-right-[3%] md:tw-right-[68px] lg:tw-right-[17%] -tw-bottom-[60px] lg:tw-bottom-[80px] tw-absolute"
+              src="assets/icons/test.webp" alt="" srcset=""/>
+          </div>
+
+          <div class="tw-flex tw-mt-[25px] lg:tw-mt-[60px]">
+            <div class="tw-border-b-2 tw-border-[#FFFFFF33] tw-h-[2px] tw-w-2 tw-ml-1"></div>
+            <div class="tw-border-b-2 tw-border-white tw-h-[2px] {{
+                data.isActive ? 'tw-w-8' : 'tw-w-2'
+              }} tw-ml-1"></div>
+            <div class="tw-border-b-2 tw-border-[#FFFFFF33] tw-h-[2px] tw-w-2 tw-ml-1"></div>
+          </div>
+
+          <div
+            class="tw-top-[-1w] tw-z-[0] tw-right-[15%] lg:tw-h-[51vh] 1100:tw-h-[51vh] tw-w-[5vw] tw-bg-[#040510] tw-absolute">
+          </div>
+        </div>
+        <div class="tw-w-full tw-h-screen tw-flex tw-justify-center lg:tw-justify-start tw-items-start tw-relative">
+          <img
+          id="img2"
+            class="tw-w-full tw-max-w-[50vh] lg:tw-max-w-[65vh] tw-mt-[4vh] lg:tw-mt-0 tw-absolute tw-right-0 tw-m-auto lg:tw-m-0 tw-left-[3%] lg:tw-left-[-18%]"
+            src="assets/icons/head2.gif"/>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <!-- slide 3 -->
+  <ng-template swiperSlide let-data>
+    <div class="tw-bg-black tw-grow">
+      <div class="tw-flex tw-flex-col lg:tw-flex-row tw-h-full">
+        <div class="tw-w-full tw-h-full tw-relative tw-flex tw-items-start tw-justify-start tw-flex-col">
+          <div *ngIf="sliderIndex==2"
+            class="tw-text-white tw-z-[1] tw-font-light tw-leading-[6vh] lg:tw-leading-[7vw] tw-h-auto tw-text-[5.5vh] lg:tw-text-[6vw]">
+            Non Communicable Diseases cause
+            <br />
+            <span class="tw-font-bold">{{title3}}</span>
+          </div>
+
+          <div class="tw-flex tw-justify-start tw-mt-[6vw] tw-h-auto tw-z-[1] tw-w-full tw-text-white tw-relative">
+            <div class="tw-w-[10vh] tw-font-light lg:tw-w-[12vh] tw-text-[2vh] lg:tw-text-[2.5vh]">
+              <span class="!tw-text-[3vh] tw-font-medium lg:!tw-text-[4vh] tw-font-medium tw-leading-none">
+                4
+              </span>
+              <br />
+              NCDs
+            </div>
+            <div
+              class="tw-w-[50vh] tw-font-light lg:tw-w-[50vh] tw-text-start tw-pl-[20px] lg:tw-pl-[30px] tw-text-[2vh] lg:tw-text-[2.5vh]"
+              style="border-left: 1px solid white;">
+              <span class="!tw-text-[3vh] lg:!tw-text-[4vh] tw-font-medium tw-leading-none">
+                5 million
+              </span>
+              <br />
+              lives can be saved in india every year
+            </div>
+
+            <!-- <img
+              (click)="nextSlide()"
+              class="hover:tw-opacity-[0.7] tw-transition-all tw-duration-[0.3s] tw-h-[9vh] tw-cursor-pointer tw-w-[11vh] lg:tw-h-[12vh] lg:tw-w-[15vh] tw-right-[3%] md:tw-right-[68px] lg:tw-right-[17%] -tw-bottom-[60px] lg:tw-bottom-[46px] tw-absolute"
+              src="assets/icons/arrowbutton.png"
+              alt=""
+              srcset=""
+            /> -->
+            <img (click)="nextSlide()"
+              class="tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-h-[9vh] tw-cursor-pointer tw-w-[11vh] lg:tw-h-[10vh] lg:tw-w-[12vh] tw-right-[3%] md:tw-right-[68px] lg:tw-right-[12%] -tw-bottom-[60px] lg:tw-bottom-[47px] tw-absolute"
+              src="assets/icons/test.webp" alt="" srcset=""/>
+          </div>
+
+          <div class="tw-flex tw-mt-[25px] lg:tw-mt-[60px]">
+            <div class="tw-border-b-2 tw-border-[#FFFFFF33] tw-h-[2px] tw-w-2 tw-ml-1"></div>
+            <div class="tw-border-b-2 tw-border-[#FFFFFF33] tw-h-[2px] tw-w-2 tw-ml-1"></div>
+            <div class="tw-border-b-2 tw-border-white tw-h-[2px] {{
+                data.isActive ? 'tw-w-8' : 'tw-w-2'
+              }} tw-ml-1"></div>
+          </div>
+
+          <div
+            class="tw-top-[-1w] tw-z-[0] tw-right-[15%] lg:tw-h-[51vh] 1100:tw-h-[51vh] tw-w-[5vw] tw-bg-[#040510] tw-absolute">
+          </div>
+        </div>
+        <div class="tw-w-full tw-h-screen tw-flex tw-justify-center lg:tw-justify-start tw-items-start tw-relative">
+          <img
+          id="img3"
+            class="tw-w-full tw-max-w-[50vh] lg:tw-max-w-[65vh] tw-mt-[4vh] lg:tw-mt-0 tw-absolute tw-right-0 tw-m-auto lg:tw-m-0 tw-left-[3%] lg:tw-left-[-18%]"
+            src="assets/icons/hands.gif"/>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</swiper>

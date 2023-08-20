@@ -1,0 +1,124 @@
+<div class="tw-w-full tw-flex tw-flex-col tw-grow tw-h-full">
+  <!-- top menu -->
+  <div class="tw-relative tw-bg-[#F0EEF4]">
+    <div
+      class="tw-right-3 tw-absolute tw-z-[2] lg:tw-right-[68px] tw-mb-[20px] tw-mt-[30px] xl:tw-mt-[50px]"
+    >
+      <div
+        class="tw-mr-3 md:tw-mr-[68px] tw-h-[60px] tw-w-[60px] tw-items-center tw-justify-center tw-flex !tw-rounded-full tw-cursor-pointer hover:tw-bg-[#e5e5ee] hover:tw-bg-opacity-[0.95] tw-transition-all tw-duration-[0.3s]"
+        (click)="openNavbar()"
+      >
+        <img
+          src="assets/icons/menu.png"
+          button
+          class="tw-w-[25px] md:tw-w-[36px] tw-h-[11px] md:tw-h-[16px]"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div
+      class="tw-absolute tw-z-[2] tw-left-[16px] lg:tw-left-[80px] tw-mb-[20px] xl:tw-mb-[50px] tw-mt-[20px] xl:tw-mt-[50px]"
+    >
+      <div>
+        <img
+          src="assets/icons/logoblue.png"
+          (click)="moveToHome()"
+          class="tw-w-[118px] lg:tw-w-[219px] tw-cursor-pointer"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- left menu -->
+  <div class="tw-absolute tw-top-[39vh] tw-z-[2]">
+    <div class="tw-flex tw-flex-col tw-pl-[16px]">
+      <div
+        class="tw-cursor-pointer tw-text-[#1A82E3] tw-text-[18px] tw-font-medium tw-mb-[25px] tw-w-[22px] tw-h-[3px] tw-leading-none"
+      >
+        Founder
+      </div>
+      <!-- <ng-template #founderLine>
+        <div
+          (click)="changeSlide(0)"
+          class="hover:before:tw-content-['Founders'] tw-cursor-pointer tw-text-[#9A9A9A] hover:tw-bg-transparent tw-text-[12px] tw-font-medium tw-mb-[25px] tw-w-[22px] tw-h-[3px] tw-leading-none tw-bg-[#00000033]"
+        ></div>
+      </ng-template>
+  -->
+    </div>
+  </div>
+
+  <img
+    routerLink="/people"
+    class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-h-[9vh] tw-absolute tw-cursor-pointer tw-right-0 lg:tw-right-[14vw] tw-top-[8%] lg:tw-top-[20%] tw-z-[2]"
+    src="assets/icons/greencrossss.png"
+    alt=""
+    srcset=""
+  />
+
+  <div
+    class="tw-pl-[16px] lg:tw-pl-[80px] tw-pt-[68px] xl:tw-pt-[80px] tw-h-[100vh]"
+  >
+    <div
+      class="tw-pl-[6vh] lg:tw-pl-[11vw] tw-pr-[0px] lg:tw-pr-[11vw] lg:tw-pt-[21vh] tw-flex tw-flex-col lg:tw-flex-row tw-h-full"
+      style="background-color: white !important;"
+    >
+      <div
+        class="tw-h-auto tw-mb-[4vh] lg:tw-mb-[0vh] lg:tw-h-full tw-pr-[10px] lg:tw-pr[0px] tw-w-[100%] lg:tw-w-[33.33%] tw-flex tw-flex-col"
+      >
+        <h1
+          class="tw-text-[#545454] tw-font-bold tw-text-[3.2vh] md:tw-text-[2vw] tw-mt-[0vh] lg:tw-mt-[2vh] tw-mb-[1vh] lg:tw-mb-[2vh]"
+        >
+          Background
+        </h1>
+        <span
+          class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[2.1vh] tw-text-[#545454] tw-mr-3 lg:tw-mr-[68px]"
+        >
+          A pioneer Cancer surgeon with 35+ years of surgical experience who
+          started Hepato Biliary Pancreatic Surgery in India in 1985, he has
+          been associated with SL Raheja and Lilavati Hospitals since c. 20
+          years. He was earlier associated with Tata Memorial Hospital.
+        </span>
+      </div>
+
+      <div
+        class="tw-h-auto tw-mb-[4vh] lg:tw-mb-[0vh] lg:tw-h-full tw-pr-[10px] lg:tw-pr[0px] tw-w-[100%] lg:tw-w-[33.33%] tw-flex tw-flex-col"
+      >
+        <h1
+          class="tw-text-[#545454] tw-font-bold tw-text-[3.2vh] md:tw-text-[2vw] tw-mt-[0vh] lg:tw-mt-[2vh] tw-mb-[1vh] lg:tw-mb-[2vh]"
+        >
+          Policy Making
+        </h1>
+        <span
+          class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[2.1vh] tw-text-[#545454] tw-mr-3 lg:tw-mr-[68px]"
+        >
+          Senior Advisor to Tata Trusts (one of the leading philanthropic
+          organisations in India) on their cancer project involving 100 centres
+          and 10 states. Lead to the World Economic Forum Centre for 4th
+          Industrial Revolution (C4IR) - FIRST Cancer Care project – leveraging
+          emerging technologies for transformation of Cancer Care.
+        </span>
+      </div>
+
+      <div
+        class="tw-h-auto lg:tw-h-full tw-pr-[10px] lg:tw-pr[0px] tw-w-[100%] lg:tw-w-[33.33%] tw-flex tw-flex-col"
+      >
+        <h1
+          class="tw-text-[#545454] tw-font-bold tw-text-[3.2vh] md:tw-text-[2vw] tw-mt-[0vh] lg:tw-mt-[2vh] tw-mb-[1vh] lg:tw-mb-[2vh]"
+        >
+          Reputation
+        </h1>
+        <span
+          class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[2.1vh] tw-text-[#545454] tw-mr-3 lg:tw-mr-[68px]"
+        >
+          Internationally renowned in the field of Oncology, he is the surgeon
+          of choice for various celebrities. He has also been speaker/chairman
+          in 50+ international conferences and is the only Indian to become the
+          President of International HPB association.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

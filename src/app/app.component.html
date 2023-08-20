@@ -1,0 +1,485 @@
+<ng-template #offCanvas let-offcanvas>
+  <!-- <div class="offcanvas-header"> -->
+  <div
+    class="tw-absolute tw-ml-[80px] lg:tw-ml-[80px] tw-bottom-[25px] tw-text-white tw-text-[2vh] lg:tw-text-[2vh]"
+  >
+    <span
+      routerLink="/terms"
+      tabindex="-1"
+      (click)="offcanvas.dismiss('Cross click')"
+      class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-cursor-pointer hover:tw-text-[#2F176D] {{
+        isActive('terms') ? 'tw-text-[#2F176D]' : 'tw-text-white'
+      }}"
+    >
+      Terms
+    </span>
+    &nbsp; | &nbsp;
+    <span
+      routerLink="/privacy"
+      (click)="offcanvas.dismiss('Cross click')"
+      tabindex="-1"
+      class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-cursor-pointer hover:tw-text-[#2F176D] {{
+        isActive('privacy') ? 'tw-text-[#2F176D]' : 'tw-text-white'
+      }} tw-text-[2vh] lg:tw-text-[2vh]"
+    >
+      Privacy
+    </span>
+  </div>
+  <div
+    class="tw-flex tw-justify-between tw-items-center tw-mt-[20px] xl:tw-mt-[50px]"
+  >
+    <div>
+      <img
+        src="assets/icons/logo.png"
+        class="tw-w-[156px] md:tw-w-[219px] tw-ml-[20px] lg:tw-ml-[80px]"
+        alt=""
+        srcset=""
+      />
+    </div>
+
+    <!-- <div class="tw-mr-3 lg:tw-mr-[68px] tw-cursor-pointer hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s]">
+      <img src="assets/icons/cross.png" (click)="offcanvas.dismiss('Cross click')" button width="28px" height="28px" alt="" srcset="" />
+    </div> -->
+    <div
+      class="tw-mr-3 md:tw-mr-[68px] tw-h-[60px] tw-w-[60px] tw-items-center tw-justify-center tw-flex !tw-rounded-full tw-cursor-pointer hover:tw-bg-[#f8f8ff] hover:tw-bg-opacity-[0.95] tw-transition-all tw-duration-[0.3s]"
+      (click)="offcanvas.dismiss('Cross click')"
+    >
+      <img
+        src="assets/icons/cross.png"
+        button
+        class="tw-w-[28px] tw-h-[28px]"
+        alt=""
+        srcset=""
+      />
+    </div>
+  </div>
+
+  <div class="offcanvas-body p-0">
+    <div
+    id="mainNav"
+      class="tw-flex tw-flex-col tw-justify-between tw-items-center tw-h-[40vh] md:tw-h-[80vh] tw-absolute tw-right-[50%] tw-left-[50%] tw-top-[13%]"
+    >
+      <div
+        (mouseout)="imgSrc = ''"
+        (mouseover)="
+          imgSrc = isActive('home') ? '' : 'assets/icons/arrowbuttonw.png'
+        "
+        routerLink="/home"
+        tabindex="-1"
+        (click)="offcanvas.dismiss('Cross click')"
+        class="forLandscape hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-flex tw-cursor-pointer tw-items-center tw-leading-[11vh] tw-text-[7vh] md:tw-text-[9vh] tw-font-light {{
+          isActive('home') ? 'tw-text-[#2F176D]' : 'tw-text-white'
+        }}"
+      >
+        <img
+          src="assets/icons/arrowbuttonw.png"
+          *ngIf="isActive('home')"
+          class="tw-h-[11vh] tw-w-[13vh] tw-mr-[10px]"
+          alt=""
+          srcset=""
+        />
+        <img
+          (mouseout)="imgSrc = ''"
+          (mouseover)="imgSrc = 'assets/icons/arrowbuttonw.png'"
+          [src]="imgSrc"
+          class="{{
+            imgSrc != '' ? 'tw-block' : 'tw-hidden'
+          }} tw-h-[11vh] tw-w-[13vh] tw-mr-[10px] tw-opacity-[0.9] max-[900px]:tw-hidden"
+          alt=""
+          srcset=""
+        />
+        Home
+      </div>
+      <div
+        (mouseout)="imgSrc2 = ''"
+        (mouseover)="
+          imgSrc2 =
+            isActive('about') || isActive('needfor') || isActive('zerotoone')
+              ? ''
+              : 'assets/icons/arrowbuttonw.png'
+        "
+        routerLink="/about"
+        tabindex="-1"
+        class="forLandscape hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-flex tw-cursor-pointer tw-items-center tw-leading-[11vh] tw-text-[7vh] md:tw-text-[9vh] tw-font-light {{
+          isActive('about') || isActive('needfor') || isActive('zerotoone')
+            ? 'tw-text-[#2F176D]'
+            : 'tw-text-white'
+        }}"
+        (click)="offcanvas.dismiss('Cross click')"
+      >
+        <img
+          src="assets/icons/arrowbuttonw.png"
+          *ngIf="
+            isActive('about') || isActive('needfor') || isActive('zerotoone')
+          "
+          class="tw-h-[11vh] tw-w-[13vh] tw-mr-[10px]"
+          alt=""
+          srcset=""
+        />
+        <img
+          (mouseout)="imgSrc2 = ''"
+          (mouseover)="imgSrc2 = 'assets/icons/arrowbuttonw.png'"
+          [src]="imgSrc2"
+          class="{{
+            imgSrc2 != '' ? 'tw-block' : 'tw-hidden'
+          }} tw-h-[11vh] tw-w-[13vh] tw-mr-[10px] tw-opacity-[0.9] max-[900px]:tw-hidden"
+          alt=""
+          srcset=""
+        />
+
+        About
+      </div>
+      <div
+        (mouseout)="imgSrc3 = ''"
+        (mouseover)="
+          imgSrc3 =
+            isActive('oxynow') || isActive('oraican')
+              ? ''
+              : 'assets/icons/arrowbuttonw.png'
+        "
+        routerLink="/oxynow"
+        tabindex="-1"
+        (click)="offcanvas.dismiss('Cross click')"
+        class="forLandscape hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-flex tw-cursor-pointer tw-items-center tw-leading-[11vh] tw-text-[7vh] md:tw-text-[9vh] tw-font-light {{
+          isActive('oxynow') || isActive('oraican')
+            ? 'tw-text-[#2F176D]'
+            : 'tw-text-white'
+        }}"
+      >
+        <img
+          src="assets/icons/arrowbuttonw.png"
+          *ngIf="
+            isActive('oxynow') || isActive('oraican') || isActive('diabetic')
+          "
+          class="tw-h-[11vh] tw-w-[13vh] tw-mr-[10px]"
+          alt=""
+          srcset=""
+        />
+        <img
+          (mouseout)="imgSrc3 = ''"
+          (mouseover)="imgSrc3 = 'assets/icons/arrowbuttonw.png'"
+          [src]="imgSrc3"
+          class="{{
+            imgSrc3 != '' ? 'tw-block' : 'tw-hidden'
+          }} tw-h-[11vh] tw-w-[13vh] tw-mr-[10px] tw-opacity-[0.9] max-[900px]:tw-hidden"
+          alt=""
+          srcset=""
+        />
+        Solutions
+      </div>
+      <div
+        (mouseout)="imgSrc4 = ''"
+        (mouseover)="
+          imgSrc4 = isActive('people') ? '' : 'assets/icons/arrowbuttonw.png'
+        "
+        routerLink="/people"
+        (click)="offcanvas.dismiss('Cross click')"
+        class="forLandscape hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-flex tw-cursor-pointer tw-items-center tw-leading-[11vh] tw-text-[7vh] md:tw-text-[9vh] tw-font-light {{
+          isActive('people') ? 'tw-text-[#2F176D]' : 'tw-text-white'
+        }}"
+        tabindex="-1"
+      >
+        <img
+          src="assets/icons/arrowbuttonw.png"
+          *ngIf="isActive('people')"
+          class="tw-h-[11vh] tw-w-[13vh] tw-mr-[10px]"
+          alt=""
+          srcset=""
+        />
+        <img
+          (mouseout)="imgSrc4 = ''"
+          (mouseover)="imgSrc4 = 'assets/icons/arrowbuttonw.png'"
+          [src]="imgSrc4"
+          class="{{
+            imgSrc4 != '' ? 'tw-block' : 'tw-hidden'
+          }} tw-h-[11vh] tw-w-[13vh] tw-mr-[10px] tw-opacity-[0.9] max-[900px]:tw-hidden"
+          alt=""
+          srcset=""
+        />
+        People
+      </div>
+      <div
+        (mouseout)="imgSrc5 = ''"
+        (mouseover)="
+          imgSrc5 = isActive('partner') ? '' : 'assets/icons/arrowbuttonw.png'
+        "
+        routerLink="/partner"
+        (click)="offcanvas.dismiss('Cross click')"
+        class="forLandscape hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-flex tw-cursor-pointer tw-items-center tw-leading-[11vh] tw-text-[7vh] md:tw-text-[9vh] tw-font-light {{
+          isActive('partner') ? 'tw-text-[#2F176D]' : 'tw-text-white'
+        }}"
+        tabindex="-1"
+      >
+        <img
+          src="assets/icons/arrowbuttonw.png"
+          *ngIf="isActive('partner')"
+          class="tw-h-[11vh] tw-w-[13vh] tw-mr-[10px]"
+          alt=""
+          srcset=""
+        />
+        <img
+          (mouseout)="imgSrc5 = ''"
+          (mouseover)="imgSrc5 = 'assets/icons/arrowbuttonw.png'"
+          [src]="imgSrc5"
+          class="{{
+            imgSrc5 != '' ? 'tw-block' : 'tw-hidden'
+          }} tw-h-[11vh] tw-w-[13vh] tw-mr-[10px] tw-opacity-[0.9] max-[900px]:tw-hidden"
+          alt=""
+          srcset=""
+        />
+        Partners
+      </div>
+      <div
+        (mouseout)="imgSrc6 = ''"
+        (mouseover)="
+          imgSrc6 = isActive('contact') ? '' : 'assets/icons/arrowbuttonw.png'
+        "
+        routerLink="/contact"
+        (click)="offcanvas.dismiss('Cross click')"
+        class="forLandscape hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-flex tw-cursor-pointer tw-items-center tw-leading-[11vh] tw-text-[7vh] md:tw-text-[9vh] tw-font-light {{
+          isActive('contact') ? 'tw-text-[#2F176D]' : 'tw-text-white'
+        }}"
+        tabindex="-1"
+      >
+        <img
+          src="assets/icons/arrowbuttonw.png"
+          *ngIf="isActive('contact')"
+          class="tw-h-[11vh] tw-w-[13vh] tw-mr-[10px]"
+          alt=""
+          srcset=""
+        />
+        <img
+          (mouseout)="imgSrc6 = ''"
+          (mouseover)="imgSrc6 = 'assets/icons/arrowbuttonw.png'"
+          [src]="imgSrc6"
+          class="{{
+            imgSrc6 != '' ? 'tw-block' : 'tw-hidden'
+          }} tw-h-[11vh] tw-w-[13vh] tw-mr-[10px] tw-opacity-[0.9] max-[900px]:tw-hidden"
+          alt=""
+          srcset=""
+        />
+        Contact
+      </div>
+    </div>
+  </div>
+</ng-template>
+<router-outlet></router-outlet>
+<!-- <swiper [config]="config" #swiper [effect]="'creative'" [creativeEffect]="{
+  prev: {
+    shadow: true,
+    translate: [0, 0, -400]
+  },
+  next: {
+    translate: ['100%', 0, 0]
+  }
+}">
+  <ng-template swiperSlide let-data>
+    <div class="tw-h-full tw-w-full">
+
+      <app-layout1>
+
+        <div class="tw-bg-black tw-grow">
+          <div class="tw-flex tw-flex-col md:tw-flex-row tw-h-full">
+            <div class="tw-w-full tw-h-full tw-relative  tw-flex tw-items-start tw-justify-start tw-flex-col">
+
+              <div
+                class="tw-text-white tw-z-[1] tw-font-light tw-lead-[58px] tw-h-[20vh] md:tw-h-[40vh] tw-text-[4.5vh] md:tw-text-[9vh] lg:tw-text-[10vh]">
+                The
+                next leap in
+                healthcare is being <br>
+                <span class="tw-font-bold">Driven by AI</span>
+              </div>
+
+              <div class="tw-flex tw-justify-start tw-mt-[4vw] tw-h-[6vh] md:tw-h-[7.6vh] tw-z-[1] tw-w-full tw-text-white tw-relative">
+                <div class="tw-w-[83px] md:tw-w-[18vh] tw-text-[2vh] md:tw-text-[2.5vh] ">Preventive <br> screenings</div>
+                <div class="tw-w-[83px] md:tw-w-[18vh] tw-text-center tw-text-[2vh] md:tw-text-[2.5vh] "
+                  style="border-left: 1px solid white;border-right: 1px solid white;">
+                  Early <br>diagnosis
+                </div>
+                <div class="tw-w-[83px] md:tw-w-[18vh] tw-text-center tw-text-[2vh] md:tw-text-[2.5vh] ">
+                  Solutions <br> at scale
+                </div>
+
+                <img (click)="changeSlide()"
+                  class="tw-h-[9vh]  tw-cursor-pointer tw-w-[11vh] md:tw-h-[12vh] md:tw-w-[15vh] tw-right-[2%] -tw-bottom-[60px] md:tw-bottom-[46px] tw-absolute"
+                  src="assets/icons/arrowbutton.png" alt="" srcset="">
+
+              </div>
+
+              <div class="tw-flex tw-mt-[25px] md:tw-mt-[60px]">
+                <div class="tw-border-b-2 tw-border-white tw-h-[2px] {{ data.isActive ?'tw-w-8':'tw-w-2'}} tw-ml-1"></div>
+                <div class="tw-border-b-2 tw-border-[#FFFFFF33] tw-h-[2px] tw-w-2 tw-ml-1"></div>
+                <div class="tw-border-b-2 tw-border-[#FFFFFF33] tw-h-[2px] tw-w-2 tw-ml-1"></div>
+              </div>
+
+
+              <div class="tw-top-[-1w] tw-z-[0] tw-right-0 md:tw-h-[51vh] 1100:tw-h-[51vh] tw-w-[5vw] tw-bg-[#040510] tw-absolute">
+              </div>
+
+
+
+            </div>
+            <div class="tw-w-full tw-h-full tw-flex tw-justify-center md:tw-justify-start tw-items-start">
+              <img class="tw-w-full md:tw-max-w-[64vh] tw-max-w-xs " src="assets/icons/mobile.gif">
+            </div>
+          </div>
+        </div>
+      </app-layout1>
+    </div>
+
+
+
+
+  </ng-template>
+  <ng-template swiperSlide let-data>
+
+
+
+
+    <div class="tw-h-full tw-w-full">
+
+      <app-layout1>
+
+        <div class="tw-bg-black tw-grow">
+          <div class="tw-flex tw-flex-col md:tw-flex-row tw-h-full">
+            <div class="tw-w-full tw-h-full tw-relative  tw-flex tw-items-start tw-justify-start tw-flex-col">
+
+              <div
+                class="tw-text-white tw-z-[1] tw-font-light tw-lead-[58px] tw-h-[20vh] md:tw-h-[40vh] tw-text-[4.5vh] md:tw-text-[9vh] lg:tw-text-[10vh]">
+                Founded by
+                <br>
+                <span class="tw-font-bold">Globally Respected
+                  Doctors </span>
+              </div>
+
+              <div class="tw-flex tw-justify-start tw-mt-[4vw] tw-h-[6vh] md:tw-h-[7.6vh] tw-z-[1] tw-w-full tw-text-white tw-relative">
+                <div class="tw-w-[65px] md:tw-w-[9vh] tw-text-[3.3vh] md:tw-text-[4.5vh] tw-font-bold tw-leading-[3vh] md:tw-leading-[4vh]">
+                  5
+                  <br><span class="!tw-text-[2vh] !md:tw-text-[1.5vh] !tw-font-normal">experts</span>
+                </div>
+                <div class=" tw-text-start tw-text-[3.3vh] md:tw-text-[4.5vh] tw-pl-5 tw-font-bold tw-leading-[3vh] md:tw-leading-[4vh]"
+                  style="border-left: 1px solid white;">
+                  150+ <br> <span class="!tw-text-[2vh] !md:tw-text-[1.5vh] !tw-font-normal">years experience</span>
+                </div>
+
+
+                <img (click)="changeSlide()"
+                  class=" tw-h-[9vh] tw-cursor-pointer tw-w-[11vh] md:tw-h-[12vh] md:tw-w-[15vh] tw-right-[2%] -tw-bottom-[60px] md:tw-bottom-[46px] tw-absolute"
+                  src="assets/icons/arrowbutton.png" alt="" srcset="">
+
+              </div>
+
+              <div class="tw-flex tw-mt-[25px] md:tw-mt-[60px]">
+                <div class="tw-border-b-2 tw-border-[#FFFFFF33] tw-h-[2px] tw-w-2 tw-ml-1"></div>
+                <div class="tw-border-b-2 tw-border-[white] tw-h-[2px] {{ data.isActive ?'tw-w-8':'tw-w-2'}} tw-ml-1"></div>
+                <div class="tw-border-b-2 tw-border-[#FFFFFF33] tw-h-[2px] tw-w-2 tw-ml-1"></div>
+              </div>
+
+
+              <div class="tw-top-[-1w] tw-z-[0] tw-right-0 md:tw-h-[51vh] 1100:tw-h-[51vh] tw-w-[5vw] tw-bg-[#040510] tw-absolute">
+              </div>
+
+
+
+            </div>
+            <div class="tw-w-full tw-h-full tw-flex tw-justify-center md:tw-justify-start tw-items-start">
+              <img class="tw-w-full md:tw-max-w-[64vh] tw-max-w-xs" src="assets/icons/head2.gif">
+            </div>
+          </div>
+        </div>
+      </app-layout1>
+    </div>
+
+  </ng-template>
+  <ng-template swiperSlide let-data>
+    <div class="tw-h-full tw-w-full">
+
+
+
+      <app-layout1>
+
+        <div class="tw-bg-black tw-grow">
+          <div class="tw-flex tw-flex-col md:tw-flex-row tw-h-full">
+            <div class="tw-w-full tw-h-full tw-relative  tw-flex tw-items-start tw-justify-start tw-flex-col">
+
+              <div
+                class="tw-text-white tw-z-[1] tw-font-light tw-lead-[58px] tw-h-[20vh] md:tw-h-[40vh] tw-text-[4.5vh] md:tw-text-[9vh] lg:tw-text-[10vh]">
+                Non Communicable
+                Diseases cause
+
+                <br>
+                <span class="tw-font-bold">Preventable Deaths </span>
+              </div>
+
+              <div class="tw-flex tw-justify-start tw-mt-[4vw] tw-h-[6vh] md:tw-h-[7.6vh] tw-z-[1] tw-w-full tw-text-white tw-relative">
+                <div class="tw-w-[65px] md:tw-w-[9vh] tw-text-[3.3vh] md:tw-text-[4.5vh] tw-font-bold tw-leading-[3vh] md:tw-leading-[4vh]">
+                  4
+                  <br><span class="!tw-text-[2vh] !md:tw-text-[1.5vh] !tw-font-normal">NCDs</span>
+                </div>
+                <div class=" tw-text-start tw-text-[3.3vh] md:tw-text-[4.5vh] tw-pl-5 tw-font-bold tw-leading-[3vh] md:tw-leading-[4vh]"
+                  style="border-left: 1px solid white;">
+                  5 million <br> <span class="!tw-text-[2vh] !md:tw-text-[1.5vh] !tw-font-normal">lives can be saved in india every
+                    year</span>
+                </div>
+
+
+                <img (click)="changeSlide()"
+                  class=" tw-h-[9vh] tw-cursor-pointer tw-w-[11vh] md:tw-h-[12vh] md:tw-w-[15vh] tw-right-[2%] -tw-bottom-[60px] md:tw-bottom-[46px] tw-absolute"
+                  src="assets/icons/arrowbutton.png" alt="" srcset="">
+
+              </div>
+
+              <div class="tw-flex tw-mt-[25px] md:tw-mt-[60px]">
+                <div class="tw-border-b-2 tw-border-[#FFFFFF33] tw-h-[2px] tw-w-2 tw-ml-1"></div>
+                <div class="tw-border-b-2 tw-border-[#FFFFFF33] tw-h-[2px] tw-w-2 tw-ml-1"></div>
+                <div class="tw-border-b-2 tw-border-white tw-h-[2px] {{ data.isActive ?'tw-w-8':'tw-w-2'}} tw-ml-1"></div>
+              </div>
+
+
+              <div class="tw-top-[-1w] tw-z-[0] tw-right-0 md:tw-h-[51vh] 1100:tw-h-[51vh] tw-w-[5vw] tw-bg-[#040510] tw-absolute">
+              </div>
+
+
+
+            </div>
+
+            <div class="tw-w-full tw-h-full tw-flex tw-justify-center md:tw-justify-start tw-items-start">
+              <img class="tw-w-full md:tw-max-w-[77vh] tw-max-w-xs " src="assets/icons/hands2.gif">
+            </div>
+          </div>
+        </div>
+      </app-layout1>
+    </div>
+
+  </ng-template>
+</swiper> -->
+
+<!-- <swiper *ngIf="false" [config]="config" #swiper [effect]="'creative'" [creativeEffect]="{
+  prev: {
+    shadow: true,
+    translate: [0, 0, -400]
+  },
+  next: {
+    translate: ['100%', 0, 0]
+  }
+}">
+  <ng-template swiperSlide let-data>
+    <div class="tw-h-full tw-w-full">
+      <app-layout2>
+        <h1>jnjnj</h1>
+      </app-layout2>
+    </div>
+  </ng-template>
+  <ng-template swiperSlide let-data>
+    <div class="tw-h-full tw-w-full">
+      <app-layout2>
+      </app-layout2>
+    </div>
+  </ng-template>
+  <ng-template swiperSlide let-data>
+    <div class="tw-h-full tw-w-full">
+      <app-layout2>
+      </app-layout2>
+    </div>
+  </ng-template>
+</swiper> -->

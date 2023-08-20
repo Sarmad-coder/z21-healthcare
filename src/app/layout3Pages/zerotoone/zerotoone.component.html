@@ -1,0 +1,615 @@
+<div
+  class="tw-right-3 tw-absolute tw-z-[2] lg:tw-right-[68px] tw-mb-[20px] tw-mt-[30px] xl:tw-mt-[50px]"
+>
+  <div
+    class="tw-mr-3 md:tw-mr-[68px] tw-h-[60px] tw-w-[60px] tw-items-center tw-justify-center tw-flex !tw-rounded-full tw-cursor-pointer hover:tw-bg-[#e5e5ee] hover:tw-bg-opacity-[0.95] tw-transition-all tw-duration-[0.3s]"
+    (click)="openNavbar()"
+  >
+    <img
+      src="assets/icons/menu.png"
+      button
+      class="tw-w-[25px] md:tw-w-[36px] tw-h-[11px] md:tw-h-[16px]"
+      alt=""
+      srcset=""
+    />
+  </div>
+</div>
+<div
+  class="tw-absolute tw-z-[2] tw-left-[16px] lg:tw-left-[80px] tw-mb-[20px] xl:tw-mb-[50px] tw-mt-[20px] xl:tw-mt-[50px]"
+>
+  <div>
+    <img
+      src="assets/icons/logoblue.png"
+      routerLink="/home"
+      (click)="ngOnInit()"
+      class="tw-w-[118px] lg:tw-w-[219px] tw-cursor-pointer"
+      alt=""
+      srcset=""
+    />
+  </div>
+</div>
+
+<div class="tw-absolute tw-top-[39vh] tw-z-[2]">
+  <div class="tw-flex tw-flex-col tw-pl-[16px]">
+    <div
+      class="tw-text-[12px] tw-font-medium tw-mb-[25px] tw-w-[22px] tw-h-[3px] tw-leading-none {{
+        activeIndex == 0 ? 'tw-bg-[#1A82E3]' : 'tw-bg-[#00000033]'
+      }} "
+    ></div>
+    <div
+      class="tw-text-[12px] tw-font-medium tw-mb-[25px] tw-w-[22px] tw-h-[3px] tw-leading-none {{
+        activeIndex == 1 ? 'tw-bg-[#1A82E3]' : 'tw-bg-[#00000033]'
+      }} "
+    ></div>
+    <div
+      class="tw-text-[12px] tw-font-medium tw-mb-[25px] tw-w-[22px] tw-h-[3px] tw-leading-none {{
+        activeIndex == 2 ? 'tw-bg-[#1A82E3]' : 'tw-bg-[#00000033]'
+      }} "
+    ></div>
+    <div
+      class="tw-text-[12px] tw-font-medium tw-mb-[25px] tw-w-[22px] tw-z-10 tw-h-[3px] tw-leading-none {{
+        activeIndex == 3 ? 'tw-bg-[#1A82E3]' : 'tw-bg-[#00000033]'
+      }} "
+    ></div>
+  </div>
+</div>
+
+<swiper
+  (slideChange)="onSlideChange($event)"
+  [config]="config"
+  [direction]="'vertical'"
+  #swiper
+  [creativeEffect]="{
+    prev: {
+      shadow: false,
+      translate: [0, 0, -1300]
+    },
+    next: {
+      translate: [0, '100%', 0]
+    }
+  }"
+>
+  <ng-template swiperSlide let-data>
+    <div
+      class="tw-pl-[16px] lg:tw-pl-[80px] tw-pt-[68px] xl:tw-pt-[80px] tw-h-[100vh]"
+    >
+      <div class="tw-flex tw-flex-col lg:tw-flex-row tw-h-full !tw-bg-white">
+        <div
+          class="tw-h-auto lg:tw-h-full tw-pr-[10px] lg:tw-pr-[0px] tw-w-[100%] lg:tw-w-[70%] tw-pt-[0vh] tw-pl-[6vh] lg:tw-pl-[3vw] lg:tw-pt-[9vh]"
+        >
+          <h1
+            class="tw-text-[#2F176D] tw-leading-[9vw] lg:tw-leading-[5.6vw] tw-font-bold tw-text-[3.2vh] lg:tw-text-[5vw] tw-mt-[0vh] lg:tw-mt-[2vh] tw-mb-[1vh] lg:tw-mb-[2vh]"
+          >
+            The genesis
+            <br />
+            & the impact
+          </h1>
+
+          <div class="tw-flex lg:tw-flex-row tw-flex-col">
+            <div
+              class="tw-h-auto tw-pl-0 lg:tw-pl-[3vw] tw-pr-0 lg:tw-pr-[30px] tw-mb-[4vh] lg:tw-mb-[0vh] lg:tw-h-full tw-w-[100%] lg:tw-w-[50%] tw-flex tw-items-start lg:tw-items-center"
+            >
+              <span
+                class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[2.1vh] tw-text-[#545454] tw-leading-[3.3vh] lg:tw-leading-[3.3vh]"
+              >
+                <span
+                  class="lg:!tw-text-[2.5vh] !tw-text-[2.5vh] tw-leading-[3vh] lg:tw-leading-[3vh]"
+                >
+                  5 globally respected doctors have come together to create Z21.
+                </span>
+                <br />
+                <br />
+                They bring with them an in-depth understanding of the medical
+                needs of the country and the on-ground realities of addressing
+                them. They have identified specific problem areas that lend
+                themselves to high impact solutions driven by technology.
+              </span>
+            </div>
+
+            <div
+              class="tw-h-auto lg:tw-h-full tw-pr-[0px] tw-w-[100%] lg:tw-w-[50%] tw-flex tw-items-start lg:tw-items-center"
+            >
+              <span
+                class="tw-font-normal tw-text-[2.1vh] tw-text-[#545454] tw-leading-[3.3vh] lg:tw-leading-[3.3vh]"
+              >
+                In partnership with reputed institutions and capable,
+                experienced technology firms, they have initiated the innovation
+                of products and solutions to solve them. Z21 is looking at
+                deployment for maximum impact. The deployment opportunities for
+                pilots in different states are already in place. Each innovation
+                is targeted to have 10x impact and touch at least a million
+                lives!
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tw-w-[100%] lg:tw-w-[30%]">
+          <img
+            src="assets/icons/greycircle.png"
+            class="tw-right-[-8%] md:tw-right-[-27%] lg:tw-right-[-20%] tw-h-[100%] md:tw-h-[140%] lg:tw-h-[86%] tw-relative"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <!--  -->
+  <ng-template swiperSlide let-data>
+    <div
+      class="tw-pl-[16px] lg:tw-pl-[80px] tw-pt-[68px] xl:tw-pt-[80px] tw-h-[100vh]"
+    >
+      <div class="tw-flex tw-flex-col lg:tw-flex-row tw-h-full !tw-bg-white">
+        <div
+          class="tw-h-auto lg:tw-h-full tw-pr-[10px] lg:tw-pr-[0px] tw-pt-[0vh] tw-pl-[6vh] lg:tw-pl-[3vw] lg:tw-pt-[9vh] tw-w-[100%] lg:tw-w-[50%]"
+        >
+          <h1
+            class="tw-text-[#2F176D] tw-leading-[9vw] lg:tw-leading-[5.6vw] tw-font-bold tw-text-[3.2vh] lg:tw-text-[5vw] tw-mt-[0vh] lg:tw-mt-[2vh] tw-mb-[1vh] lg:tw-mb-[2vh]"
+          >
+            Our
+            <br />
+            Vision
+          </h1>
+
+          <div class="tw-flex">
+            <div
+              class="tw-h-auto tw-pl-0 lg:tw-pl-[3vw] tw-pr-0 lg:tw-pr-[30px] tw-mb-[4vh] lg:tw-mb-[0vh] lg:tw-h-full tw-w-[100%] lg:tw-w-[50%] tw-flex tw-items-start lg:tw-items-center"
+            >
+              <span
+                class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[2.1vh] tw-text-[#545454] tw-leading-[3.3vh] lg:tw-leading-[3.3vh]"
+              >
+                To bring about an unprecedented transformation of healthcare
+                delivery in NCDs using emerging technologies such as AI,ML and
+                iOT to the advantage of patients
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tw-w-full lg:tw-w-[50%]">
+          <img
+            src="assets/icons/greycircle.png"
+            class="tw-right-[11S%] tw-h-full md:tw-h-[200%] lg:tw-h-[193%] tw-bottom-[-20%] lg:tw-bottom-[43%] tw-relative"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <!--  -->
+
+  <ng-template swiperSlide let-data>
+    <div
+      class="tw-pl-[16px] lg:tw-pl-[80px] tw-pt-[68px] xl:tw-pt-[80px] tw-h-[100vh]"
+    >
+      <div
+        class="tw-flex tw-flex-col tw-pl-[6vh] lg:tw-pl-[3vw] lg:tw-flex-row tw-h-full !tw-bg-white"
+      >
+        <div
+          class="tw-h-auto lg:tw-h-[70vh] tw-flex tw-flex-col tw-items-start tw-justify-start lg:tw-justify-start tw-pr-[10px] lg:tw-pr-[0px] tw-pt-[0vh] lg:tw-pt-[9vh] tw-w-[100%] lg:tw-w-[35%]"
+        >
+          <h1
+            class="tw-text-[#2F176D] tw-leading-[9vw] lg:tw-leading-[5.6vw] tw-font-bold tw-text-[3.2vh] lg:tw-text-[5vw] tw-mt-[0vh] lg:tw-mt-[2vh] tw-mb-[1vh] lg:tw-mb-[2vh] tw-z-10"
+          >
+            Our
+            <br />
+            Objectives
+          </h1>
+          <img
+            src="assets/icons/greycircle.png"
+            class="tw-h-[60%] tw-right-[-26%] tw-bottom-[11%] tw-relative tw-hidden lg:tw-block"
+            alt=""
+            srcset=""
+          />
+        </div>
+        <div
+          class="tw-h-[56vh] lg:tw-h-[70vh] tw-flex tw-flex-col tw-justify-between tw-pr-[10px] lg:tw-pr-[37vh] tw-mt-[10px] lg:tw-mt-[0px] tw-w-[100%] lg:tw-w-[65%]"
+        >
+          <div class="tw-flex tw-justify-start tw-align-center">
+            <div
+              class="tw-text-[3vh] tw-min-w-[30px] lg:tw-min-w-[85px] tw-max-w-[30px] lg:tw-max-w-[85px] tw-pr-[10px] lg:tw-text-[6vh] tw-font-bold tw-text-[#2F176D]"
+            >
+              01
+            </div>
+
+            <div
+              class="tw-w-[80%] tw-font-normal tw-text-[2.1vh] lg:tw-text-[2.1vh] tw-text-[#545454]"
+            >
+              <b>To use emerging technologies</b>
+              such as AI, ML and IOT for sustainable, scalable solutions to
+              important clinical problems.
+            </div>
+          </div>
+          <div class="tw-flex tw-justify-start tw-items-center">
+            <div
+              class="tw-text-[3vh] tw-min-w-[30px] lg:tw-min-w-[85px] tw-max-w-[30px] lg:tw-max-w-[85px] tw-pr-[10px] lg:tw-text-[6vh] tw-font-bold tw-text-[#2F176D]"
+            >
+              02
+            </div>
+
+            <div
+              class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[2.1vh] tw-text-[#545454]"
+            >
+              <b>To mentor, refine and validate the ideas</b>
+              of innovators by involving medical experts throughout the product
+              life cycle.
+            </div>
+          </div>
+          <div class="tw-flex tw-justify-start tw-items-center">
+            <div
+              class="tw-text-[3vh] tw-min-w-[30px] lg:tw-min-w-[85px] tw-max-w-[30px] lg:tw-max-w-[85px] tw-pr-[10px] lg:tw-text-[6vh] tw-font-bold tw-text-[#2F176D]"
+            >
+              03
+            </div>
+            <div
+              class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[2.1vh] tw-text-[#545454]"
+            >
+              <b>To enable continuous healthcare innovation</b>
+              by creating a financially sustainable ecosystem for all those
+              involved.
+            </div>
+          </div>
+          <div class="tw-flex tw-justify-start tw-items-center">
+            <div
+              class="tw-text-[3vh] tw-min-w-[30px] lg:tw-min-w-[85px] tw-max-w-[30px] lg:tw-max-w-[85px] tw-pr-[10px] lg:tw-text-[6vh] tw-font-bold tw-text-[#2F176D]"
+            >
+              04
+            </div>
+            <div
+              class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[2.1vh] tw-text-[#545454]"
+            >
+              <b>To reduce the mortality and morbidity</b>
+              due to noncommunicable diseases (NCDs) by using high impact
+              med-tech innovations.
+            </div>
+          </div>
+          <div class="tw-flex tw-justify-start tw-items-center">
+            <div
+              class="tw-text-[3vh] tw-min-w-[30px] lg:tw-min-w-[85px] tw-max-w-[30px] lg:tw-max-w-[85px] tw-pr-[10px] lg:tw-text-[6vh] tw-font-bold tw-text-[#2F176D]"
+            >
+              05
+            </div>
+            <div
+              class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[2.1vh] tw-text-[#545454]"
+            >
+              <b>To make a strong social impact</b>
+              by ensuring that quality healthcare is more affordable, accessible
+              and equitable.
+            </div>
+          </div>
+          <div class="tw-flex tw-justify-start tw-items-center">
+            <div
+              class="tw-text-[3vh] tw-min-w-[30px] lg:tw-min-w-[85px] tw-max-w-[30px] lg:tw-max-w-[85px] tw-pr-[10px] lg:tw-text-[6vh] tw-font-bold tw-text-[#2F176D]"
+            >
+              06
+            </div>
+            <div
+              class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[2.1vh] tw-text-[#545454]"
+            >
+              <b>To create value for investors,</b>
+              not only in the financial space but also with respect to a strong
+              and lasting social impact.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <!--  -->
+  <ng-template swiperSlide let-data>
+    <div
+      class="tw-pl-[16px] lg:tw-pl-[80px] tw-pt-[68px] xl:tw-pt-[80px] tw-h-[100vh]"
+    >
+      <div
+        class="tw-flex tw-pl-[6vh] lg:tw-pl-[3vw] tw-flex-col lg:tw-flex-row tw-h-full !tw-bg-white"
+      >
+        <div
+          class="tw-h-auto lg:tw-h-[70vh] tw-flex tw-items-center tw-justify-start lg:tw-justify-start tw-pr-[10px] lg:tw-pr-[0px] tw-w-[100%] lg:tw-w-[39%]"
+        >
+          <h1
+            class="tw-leading-[9vw] md:tw-leading-[5vw] lg:tw-leading-[5.6vw] tw-z-[1] tw-text-[#2F176D] tw-font-bold tw-text-[3.2vw] md:tw-text-[3.5vw] lg:tw-text-[5vw] tw-mt-[0vh] lg:tw-mt-[2vh] tw-mb-[1vh] lg:tw-mb-[2vh]"
+          >
+            Key
+            <br />
+            Differentiators
+            <br />
+            for Z21
+          </h1>
+
+          <div
+            *ngIf="activeIndex == 3"
+            class="tw-h-[120vh] tw-w-[80vw] tw-top-[-73px] tw-bottom-[-6px] tw-hidden lg:tw-block tw-left-[-26%] tw-rounded-full tw-absolute tw-bg-[#F6F6F6]"
+          ></div>
+          <div
+            class="tw-h-[56vh] tw-absolute tw-top-[13vh] tw-left-[49vw] tw-z-[3] tw-hidden lg:tw-h-[70vh] lg:tw-flex tw-flex-col tw-justify-between tw-pr-[10px] lg:tw-pr[64px] tw-mt-[10px] lg:tw-mt-[0px] tw-w-[100%] lg:tw-w-[61%]"
+          >
+            <div class="d-flex tw-h-[68px]">
+              <div class="tw-mr-[18px] tw-ml-[-2%]">
+                <div
+                  class="tw-w-[11.6vh] tw-h-[11.6vh] tw-bg-[#2F176D] tw-text-[5vh] tw-rounded-full tw-flex tw-items-center tw-justify-center"
+                >
+                  01
+                </div>
+              </div>
+
+              <div
+                class="tw-flex tw-flex-grow tw-flex-col tw-justify-start tw-items-start"
+              >
+                <div
+                  class="tw-text-[2.1vh] tw-pr-[10px] lg:tw-text-[2.4vh] tw-font-bold tw-text-black"
+                >
+                  Involment of clinicians
+                </div>
+
+                <div
+                  class="tw-w-[80%] tw-font-normal tw-text-[2.1vh] tw-leading-[1.2] lg:tw-text-[2.1vh] tw-text-[#545454]"
+                >
+                  <ul class="tw-pl-[21px]">
+                    <li>Clinicals to be involved through the product cycle.</li>
+                    <li>
+                      Will ensure product for, acceptance & increased
+                      accessibility
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex tw-ml-[2%] tw-h-[68px]">
+              <div class="tw-mr-[18px]">
+                <div
+                  class="tw-w-[11.6vh] tw-h-[11.6vh] tw-bg-[#2F176D] tw-text-[5vh] tw-rounded-full tw-flex tw-items-center tw-justify-center"
+                >
+                  02
+                </div>
+              </div>
+
+              <div
+                class="tw-flex tw-flex-grow tw-flex-col tw-justify-start tw-items-start"
+              >
+                <div
+                  class="tw-text-[2.1vh] tw-pr-[10px] lg:tw-text-[2.4vh] tw-font-bold tw-text-black"
+                >
+                  Focus on 3-4 high impact areas
+                </div>
+
+                <div
+                  class="tw-w-[80%] tw-font-normal tw-text-[2.1vh] tw-leading-[1.2] lg:tw-text-[2.1vh] tw-text-[#545454]"
+                >
+                  Cancer (Oral, Cevical, Breast) Respiatory, Diabetes and
+                  <br />
+                  Cardiovascular diseases; focus expected to impact scress rate
+                </div>
+              </div>
+            </div>
+            <div class="d-flex tw-ml-[2.9vw] tw-h-[68px]">
+              <div class="tw-mr-[18px]">
+                <div
+                  class="tw-w-[11.6vh] tw-h-[11.6vh] tw-bg-[#2F176D] tw-text-[5vh] tw-rounded-full tw-flex tw-items-center tw-justify-center"
+                >
+                  03
+                </div>
+              </div>
+
+              <div
+                class="tw-flex tw-flex-grow tw-flex-col tw-justify-start tw-items-start"
+              >
+                <div
+                  class="tw-text-[2.1vh] tw-pr-[10px] lg:tw-text-[2.4vh] tw-font-bold tw-text-black"
+                >
+                  Creation of a collabrative ecosystem
+                </div>
+
+                <div
+                  class="tw-w-[80%] tw-font-normal tw-text-[q.9vh] tw-leading-[1.2] lg:tw-text-[2.1vh] tw-text-[#545454]"
+                >
+                  Technology, investors, industry experts,
+                  <br />
+                  domain experts
+                </div>
+              </div>
+            </div>
+            <div class="d-flex tw-ml-[2%] tw-h-[68px]">
+              <div class="tw-mr-[18px]">
+                <div
+                  class="tw-w-[11.6vh] tw-h-[11.6vh] tw-bg-[#2F176D] tw-text-[5vh] tw-rounded-full tw-flex tw-items-center tw-justify-center"
+                >
+                  04
+                </div>
+              </div>
+
+              <div
+                class="tw-flex tw-flex-grow tw-flex-col tw-justify-start tw-items-start"
+              >
+                <div
+                  class="tw-text-[2.1vh] tw-pr-[10px] lg:tw-text-[2.4vh] tw-font-bold tw-text-black"
+                >
+                  Structured Processes
+                </div>
+
+                <div
+                  class="tw-w-[80%] tw-font-normal tw-text-[2.1vh] tw-leading-[1.2] lg:tw-text-[2.1vh] tw-text-[#545454]"
+                >
+                  Well defined processes from idea generation
+                  <br />
+                  to product licencing
+                </div>
+              </div>
+            </div>
+            <div class="d-flex tw-ml-[-1vw] tw-h-[68px]">
+              <div class="tw-mr-[18px]">
+                <div
+                  class="tw-w-[11.6vh] tw-h-[11.6vh] tw-bg-[#2F176D] tw-text-[5vh] tw-rounded-full tw-flex tw-items-center tw-justify-center"
+                >
+                  05
+                </div>
+              </div>
+
+              <div
+                class="tw-flex tw-flex-grow tw-flex-col tw-justify-start tw-items-start"
+              >
+                <div
+                  class="tw-text-[2.1vh] tw-pr-[10px] lg:tw-text-[2.4vh] tw-font-bold tw-text-black"
+                >
+                  Better market access
+                </div>
+
+                <div
+                  class="tw-w-[80%] tw-font-normal tw-text-[2.1vh] tw-leading-[1.2] lg:tw-text-[2.1vh] tw-text-[#545454]"
+                >
+                  Strong access to hospitals & connects with
+                  <br />
+                  industry professionals.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- small screen -->
+        <div
+          class="tw-h-[56vh] tw-block lg:tw-h-[70vh] lg:tw-hidden tw-flex-col tw-justify-between tw-pr-[10px] lg:tw-pr[64px] tw-mt-[10px] lg:tw-mt-[0px] tw-w-[100%] lg:tw-w-[55%]"
+        >
+          <div class="tw-flex tw-mb-[1.5vh] tw-justify-start tw-items-start">
+            <div
+              class="tw-text-[2.1vh] tw-min-w-[120px] lg:tw-min-w-[179px] tw-max-w-[120px] lg:tw-max-w-[179px] tw-pr-[10px] lg:tw-text-[3vh] tw-font-bold tw-text-black"
+            >
+              Involment of
+              <br />
+              clinicians
+            </div>
+
+            <div
+              class="tw-w-[80%] tw-font-normal tw-text-[2.1vh] lg:tw-text-[3vh] tw-text-[#545454]"
+            >
+              Clinicals to be involved through the product cycle.Will ensure
+              product for, acceptance & increased accessibility
+            </div>
+          </div>
+          <div class="tw-flex tw-mb-[1.5vh] tw-justify-start tw-items-start">
+            <div
+              class="tw-text-[2.1vh] tw-min-w-[120px] lg:tw-min-w-[179px] tw-max-w-[120px] lg:tw-max-w-[179px] tw-pr-[10px] lg:tw-text-[3vh] tw-font-bold tw-text-black"
+            >
+              Focus on 3-4 high
+              <br />
+              impact areas
+            </div>
+
+            <div
+              class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[3vh] tw-text-[#545454]"
+            >
+              Cancer (Oral, Cevical, Breast) Respiatory, Diabetes and
+              Cardiovascular diseases; focus expected to impact scress rate
+            </div>
+          </div>
+          <div class="tw-flex tw-mb-[1.5vh] tw-justify-start tw-items-start">
+            <div
+              class="tw-text-[2.1vh] tw-min-w-[120px] lg:tw-min-w-[179px] tw-max-w-[120px] lg:tw-max-w-[179px] tw-pr-[10px] lg:tw-text-[3vh] tw-font-bold tw-text-black"
+            >
+              Creation of a
+              <br />
+              collabrative ecosystem
+            </div>
+            <div
+              class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[3vh] tw-text-[#545454]"
+            >
+              Technology, investors, industry experts, domain experts
+            </div>
+          </div>
+          <div class="tw-flex tw-mb-[1.5vh] tw-justify-start tw-items-start">
+            <div
+              class="tw-text-[2.1vh] tw-min-w-[120px] lg:tw-min-w-[179px] tw-max-w-[120px] lg:tw-max-w-[179px] tw-pr-[10px] lg:tw-text-[3vh] tw-font-bold tw-text-black"
+            >
+              Structured
+              <br />
+              Processes
+            </div>
+            <div
+              class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[3vh] tw-text-[#545454]"
+            >
+              Well defined processes from idea generation to product licencing
+            </div>
+          </div>
+          <div class="tw-flex tw-mb-[1.5vh] tw-justify-start tw-items-start">
+            <div
+              class="tw-text-[2.1vh] tw-min-w-[120px] lg:tw-min-w-[179px] tw-max-w-[120px] lg:tw-max-w-[179px] tw-pr-[10px] lg:tw-text-[3vh] tw-font-bold tw-text-black"
+            >
+              Better market
+              <br />
+              access
+            </div>
+            <div
+              class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[3vh] tw-text-[#545454]"
+            >
+              Strong access to hospitals & connects with industry professionals.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</swiper>
+<!-- </div> -->
+
+<!-- old slides -->
+<!-- <ng-template swiperSlide let-data>
+    <div class="tw-relative lg:tw-w-full tw-w-[100%] tw-h-[100vh] tw-bg-white">
+      <img src="assets/icons/vision.png" class="tw-m-auto tw-bottom-0 tw-left-0 {{ activeIndex == 1 ? 'tw-top-[-7vh] md:tw-top-[0vh] lg:tw-top-[-5vh] tw-h-[70vw]  lg:tw-h-[65vw] tw-w-[70vw] lg:tw-w-[65vw]' : 'tw-top-[-7vh] md:tw-top-[0vh] lg:tw-top-[10vh] tw-h-[70vw]  lg:tw-h-[52vw] tw-w-[70vw] lg:tw-w-[52vw]' }}  tw-right-0 tw-text-center tw-absolute" alt="" srcset="" />
+    </div>
+  </ng-template> -->
+<!-- <ng-template swiperSlide let-data>
+    <div class="tw-pl-[7vh] lg:tw-pl-[80px] tw-pt-[80px] tw-flex tw-flex-col lg:tw-flex-row tw-h-[100vh] tw-pr-3 lg:tw-pr-[68px] lg:tw-pt-[16vh] xl:tw-pt-[80px]" style="background-color: white !important">
+      <div class="tw-h-auto lg:tw-h-[70vh] tw-flex tw-items-end tw-justify-start lg:tw-justify-end tw-pr-[10px] lg:tw-pr-[0px] tw-w-[100%] lg:tw-w-[45%]">
+        <h1 class="tw-leading-[4vh] md:tw-leading-[5vw] lg:tw-leading-[10vh] tw-z-[1] lg:tw-w-[40%] tw-w-[100%] tw-text-[#2F176D] tw-font-bold tw-text-[3.2vh] lg:tw-text-[4vw] tw-mt-[0vh] lg:tw-mt-[2vh] tw-mb-[1vh] lg:tw-mb-[2vh]">Our Objectives</h1>
+      </div>
+      <div class="tw-h-auto lg:tw-h-full tw-pr-[10px] lg:tw-pr[0px] tw-mt-[10px] lg:tw-mt-[0px] tw-w-[100%] lg:tw-w-[55%]">
+        <div class="tw-relative tw-z-[1] tw-h-[29vh] lg:tw-h-[55vh]">
+          <div style="box-shadow: white 0px -90px 40px -2em inset" class="tw-absolute tw-bottom-0 tw-w-full tw-h-[25vh] tw-z-[2]"></div>
+
+          <div class="tw-font-normal tw-h-full tw-text-[2.1vh] lg:tw-text-[3vh] tw-text-[#545454] tw-mt-[2vh] lg:tw-mt-[5vh]">
+            <swiper
+              [loop]="true"
+              direction="vertical"
+              [autoplay]="{
+                delay: 2000
+              }"
+              [watchSlidesProgress]="true"
+              [slidesPerView]="2"
+              class="mySwiper"
+              #swiper>
+              <ng-template swiperSlide let-data>
+                <div class="tw-flex tw-items-center tw-justify-between">
+                  <div class="tw-text-[#2F116E] tw-text-[2.8vh] lg:tw-text-[2.2vw]">1</div>
+                  <div class="tw-mx-[30px]">
+                    <img src="assets/icons/objective.png" class="tw-h-[90px] tw-w-[90px] md:tw-h-[11vw] md:tw-w-[11vw]" alt="" srcset="" />
+                  </div>
+                  <div class="tw-font-normal tw-text-[1.3vh] md:tw-text-[2vh] lg:tw-text-[3vh] tw-text-[#545454] tw-mr-3 lg:tw-mr-[68px]">To use emerging technologies such as AI, ML and IOT for sustainable, scalable solutions to important clinical problems.</div>
+                </div>
+              </ng-template>
+              <ng-template swiperSlide>
+                <div class="tw-flex tw-items-center tw-justify-between">
+                  <div class="tw-text-[#2F116E] tw-text-[2.8vh] lg:tw-text-[2.2vw]">2</div>
+                  <div class="tw-mx-[30px]">
+                    <img src="assets/icons/objective.png" class="tw-h-[90px] tw-w-[90px] md:tw-h-[11vw] md:tw-w-[11vw]" alt="" srcset="" />
+                  </div>
+                  <div class="tw-font-normal tw-text-[1.3vh] md:tw-text-[2vh] lg:tw-text-[3vh] tw-text-[#545454] tw-mr-3 lg:tw-mr-[68px]">To mentor, refine and validate the ideas of innovators by involving medical experts throughout the product life cycle.</div>
+                </div>
+              </ng-template>
+              <ng-template swiperSlide>
+                <div class="tw-flex tw-items-center tw-justify-between">
+                  <div class="tw-text-[#2F116E] tw-text-[2.8vh] lg:tw-text-[2.2vw]">3</div>
+                  <div class="tw-mx-[30px]">
+                    <img src="assets/icons/objective.png" class="tw-h-[90px] tw-w-[90px] md:tw-h-[11vw] md:tw-w-[11vw]" alt="" srcset="" />
+                  </div>
+                  <div class="tw-font-normal tw-text-[1.3vh] md:tw-text-[2vh] lg:tw-text-[3vh] tw-text-[#545454] tw-mr-3 lg:tw-mr-[68px]">To use emerging technologies such as AI, ML and IOT for sustainable, scalable solutions to important clinical problems.</div>
+                </div>
+              </ng-template>
+            </swiper>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template> -->

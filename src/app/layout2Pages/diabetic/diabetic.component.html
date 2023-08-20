@@ -1,0 +1,427 @@
+<!-- <div class="tw-right-3 tw-absolute tw-z-[2] lg:tw-right-[68px] tw-mb-[47px] tw-mt-[30px] xl:tw-mt-[50px]">
+  <div class="tw-cursor-pointer">
+    <img src="assets/icons/menublue.png" (click)="openNavbar()" button class="tw-w-[25px] lg:tw-w-[36px] tw-h-[11px] lg:tw-h-[16px]" alt="" srcset="" />
+  </div>
+</div>
+
+<div class="tw-absolute tw-z-[2] tw-left-[16px] lg:tw-left-[80px] tw-mb-[24px] tw-mt-[24px] lg:tw-mb-[31px] lg:tw-mt-[31px]">
+  <div>
+    <img src="assets/icons/logoblue.png" routerLink="/home" (click)="ngOnInit()" class="tw-w-[118px] lg:tw-w-[219px] tw-cursor-pointer" alt="" srcset="" />
+  </div>
+</div> -->
+
+<!-- <div class="tw-flex tw-justify-between">
+  <img src="assets/icons/logoblue.png" (click)="openNavbar()" button class="tw-w-[25px] lg:tw-w-[36px] tw-h-[11px] lg:tw-h-[16px]" alt="" srcset="" />
+  <img src="assets/icons/menublue.png" (click)="openNavbar()" button class="tw-w-[25px] lg:tw-w-[36px] tw-h-[11px] lg:tw-h-[16px]" alt="" srcset="" />
+</div> -->
+<!-- 
+<div class="tw-flex tw-justify-between tw-items-center tw-h-[10%] lg:tw-h-[20vh] tw-pr-3 lg:tw-pr-[68px] tw-absolute tw-w-[100vw] tw-z-[2]" style="border: 2px solid red">
+  <div>
+    <img src="assets/icons/logoblue.png" routerLink="/home" class="tw-w-[118px] md:tw-w-[219px] tw-cursor-pointer" alt="" srcset="" />
+  </div>
+  <div class="tw-cursor-pointer">
+    <img src="assets/icons/menublue.png" (click)="openNavbar()" button class="tw-w-[25px] md:tw-w-[36px] tw-h-[11px] md:tw-h-[16px]" alt="" srcset="" />
+  </div>
+</div> -->
+
+<div class="tw-absolute tw-top-[39vh] tw-z-[2] tw-left-0">
+  <div class="tw-flex tw-flex-col tw-pl-[16px]">
+    <div
+      class="tw-cursor-pointer tw-text-[#1A82E3] tw-text-[12px] tw-font-medium tw-mb-[25px] tw-w-[22px] tw-h-[3px] tw-leading-none"
+      *ngIf="activeIndex == 0; else active0"
+    >
+      Intro
+    </div>
+    <ng-template #active0>
+      <div
+        (click)="changeSlide(0)"
+        class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] hover:before:tw-content-['Intro'] tw-cursor-pointer tw-text-[#9A9A9A] hover:tw-bg-transparent tw-text-[12px] tw-font-medium tw-mb-[25px] tw-w-[22px] tw-h-[3px] tw-leading-none tw-bg-[#00000033]"
+      ></div>
+    </ng-template>
+    <div
+      class="tw-cursor-pointer tw-w-[10vh] tw-text-[#1A82E3] tw-text-[12px] tw-font-medium tw-mb-[25px] tw-h-[3px] tw-leading-none"
+      *ngIf="activeIndex == 1; else active1"
+    >
+      Need
+    </div>
+    <ng-template #active1>
+      <div
+        (click)="changeSlide(1)"
+        class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] hover:before:tw-content-['Need'] hover:tw-w-[10vh] tw-w-[22px] tw-cursor-pointer tw-text-[#9A9A9A] hover:tw-bg-transparent tw-text-[12px] tw-font-medium tw-mb-[25px] tw-h-[3px] tw-leading-none tw-bg-[#00000033]"
+      ></div>
+    </ng-template>
+    <div
+      class="tw-cursor-pointer tw-w-[10vh] tw-text-[#1A82E3] tw-text-[12px] tw-font-medium tw-mb-[25px] tw-h-[3px] tw-leading-none"
+      *ngIf="activeIndex == 2; else active2"
+    >
+      Benefits
+    </div>
+    <ng-template #active2>
+      <div
+        (click)="changeSlide(2)"
+        class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] hover:before:tw-content-[''] hover:tw-w-[10vh] tw-w-[22px] tw-cursor-pointer tw-text-[#9A9A9A] hover:tw-bg-transparent tw-text-[12px] tw-font-medium tw-mb-[25px] tw-h-[3px] tw-leading-none tw-bg-[#00000033]"
+      ></div>
+    </ng-template>
+    <div
+      class="tw-cursor-pointer tw-w-[10vh] tw-text-[#1A82E3] tw-text-[12px] tw-font-medium tw-mb-[25px] tw-h-[3px] tw-leading-none"
+      *ngIf="activeIndex == 3; else active3"
+    >
+      Impact
+    </div>
+    <ng-template #active3>
+      <div
+        (click)="changeSlide(3)"
+        class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] hover:before:tw-content-['Impact'] hover:tw-w-[10vh] tw-w-[22px] tw-cursor-pointer tw-text-[#9A9A9A] hover:tw-bg-transparent tw-text-[12px] tw-font-medium tw-mb-[25px] tw-h-[3px] tw-leading-none tw-bg-[#00000033]"
+      ></div>
+    </ng-template>
+  </div>
+</div>
+
+<swiper
+  (slideChange)="onSlideChange($event)"
+  [config]="config"
+  [direction]="'vertical'"
+  #swiper
+  [creativeEffect]="{
+    prev: {
+      shadow: false,
+      translate: [0, 0, -1300]
+    },
+    next: {
+      translate: [0, '100%', 0]
+    }
+  }"
+>
+  <!-- 1 -->
+  <ng-template swiperSlide let-data>
+    <div class="tw-flex tw-flex-col lg:tw-flex-row tw-h-[100%] tw-bg-white">
+      <div
+        class="tw-h-auto lg:tw-h-full tw-ml-[10%] tw-pr-[10px] lg:tw-pr-[0px] lg:tw-ml-[0%] tw-w-[86%] lg:tw-w-[50%]"
+      >
+        <h1
+          class="tw-text-[#2F176D] tw-leading-[6vh] lg:tw-leading-[9vh] tw-font-bold tw-text-[3.2vh] lg:tw-text-[5vw] tw-ml-[0vh] lg:tw-ml-[32vh] tw-mt-[13vh] lg:tw-mt-[30vh] tw-mb-[1vh] lg:tw-mb-[2vh]"
+        >
+          Diabetic
+          <br />
+          Neuropathy
+        </h1>
+        <div
+          class="tw-relative tw-z-[1] tw-bg-white tw-ml-[0vh] lg:tw-ml-[32vh]"
+        >
+          <div
+            class="tw-font-normal tw-text-[2.1vh] tw-text-[#545454] tw-mt-[2vh] lg:tw-mt-[5vh]"
+          >
+            Loss of sensation can be caught early by sensors Tissue stiffness is
+            a reasonable proxy for loss of sensation in diabetics. This
+            stiffness, if detected early, can save patients from the possibility
+            of amputation in the future. We have developed an innovative
+            diabetic neuropathy device, designed using sensors to identify and
+            monitor tissue stiffness at early stages. The device has virtually
+            no known competition.
+          </div>
+        </div>
+      </div>
+      <div
+        class="tw-h-full tw-w-[100%] lg:tw-w-[50%] tw-pl-0 lg:tw-pl-4 tw-relative tw-overflow-hidden lg:tw-overflow-visible"
+      >
+        <img
+          src="assets/icons/diabetic.png"
+          class="tw-absolute tw-right-0 lg:tw-right-0 tw-left-0 lg:tw-left-auto tw-m-auto lg:tw-m-0 tw-h-[100%] lg:tw-h-[100%] tw-w-[80%] lg:tw-w-[80%]"
+          style="object-fit: contain;"
+          alt=""
+          srcset=""
+        />
+
+        <img
+          src="assets/icons/search.png"
+          class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-cursor-pointer tw-absolute tw-right-[8vw] md:tw-right-[31vw] lg:tw-right-[29vw] tw-bottom-[8vh] tw-w-[13vh] lg:tw-w-[15%]"
+          style="object-fit: contain;"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+  </ng-template>
+  <!-- 2 -->
+  <ng-template swiperSlide let-data>
+    <div class="tw-flex tw-flex-col lg:tw-flex-row tw-h-[100%] tw-bg-white">
+      <div
+        class="tw-h-auto lg:tw-h-full tw-ml-[10%] tw-pr-[10px] lg:tw-pr-[0px] lg:tw-ml-[0%] tw-w-[86%] lg:tw-w-[50%]"
+      >
+        <h1
+          class="tw-text-[#2F176D] tw-leading-[6vh] lg:tw-leading-[9vh] tw-font-bold tw-text-[3.2vh] lg:tw-text-[5vw] tw-ml-[0vh] lg:tw-ml-[32vh] tw-mt-[13vh] lg:tw-mt-[30vh] tw-mb-[1vh] lg:tw-mb-[2vh]"
+        >
+          Diabetic
+          <br />
+          Neuropathy
+        </h1>
+        <div
+          class="tw-relative tw-z-[1] tw-bg-white tw-ml-[0vh] lg:tw-ml-[32vh]"
+        >
+          <div
+            class="tw-font-normal tw-text-[2.1vh] tw-text-[#545454] tw-mt-[2vh] lg:tw-mt-[5vh]"
+          >
+            Regular monitoring to prevent amputations India has one of the
+            largest populations of diabetics in the world. Uncontrolled high
+            levels of blood sugar lead to loss of sensation, foot ulcers and
+            eventually to amputation of the foot. This occurs in about 1.5
+            million patients each year. Regular monitoring can reduce
+            amputations by upto 40% each year. Our diabetic neuropathy device
+            makes such monitoring possible.
+          </div>
+        </div>
+      </div>
+      <div
+        class="tw-h-full tw-w-[100%] lg:tw-w-[50%] tw-pl-0 lg:tw-pl-4 tw-relative tw-overflow-hidden lg:tw-overflow-visible"
+      >
+        <img
+          src="assets/icons/diabetic.png"
+          class="tw-absolute tw-right-0 lg:tw-right-0 tw-left-0 lg:tw-left-auto tw-m-auto lg:tw-m-0 tw-h-[100%] lg:tw-h-[100%] tw-w-[80%] lg:tw-w-[80%]"
+          style="object-fit: contain;"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+  </ng-template>
+  <!-- 3 -->
+  <ng-template swiperSlide let-data>
+    <div class="tw-relative lg:tw-w-full tw-w-[100%] tw-h-[100vh] tw-bg-white">
+      <img
+        src="assets/icons/soon.png"
+        class="tw-m-auto tw-bottom-0 tw-left-0 {{
+          activeIndex == 1
+            ? 'tw-top-[-7vh] md:tw-top-[0vh] lg:tw-top-[0vh] tw-h-[55vw]  lg:tw-h-[40vw] tw-w-[55vw] lg:tw-w-[40vw]'
+            : 'tw-top-[-7vh] md:tw-top-[0vh] lg:tw-top-[10vh] tw-h-[70vw]  lg:tw-h-[52vw] tw-w-[70vw] lg:tw-w-[52vw]'
+        }}  tw-right-0 tw-text-center tw-absolute"
+        alt=""
+        srcset=""
+      />
+    </div>
+  </ng-template>
+  <!-- 4 -->
+  <ng-template swiperSlide let-data>
+    <div class="tw-flex tw-flex-col lg:tw-flex-row tw-h-[100%] tw-bg-white">
+      <div
+        class="tw-h-auto lg:tw-h-full tw-ml-[10%] tw-pr-[10px] lg:tw-pr-[0px] lg:tw-ml-[0%] tw-w-[86%] lg:tw-w-[50%]"
+      >
+        <h1
+          class="tw-text-[#2F176D] tw-leading-[6vh] lg:tw-leading-[9vh] tw-font-bold tw-text-[3.2vh] lg:tw-text-[5vw] tw-ml-[0vh] lg:tw-ml-[32vh] tw-mt-[13vh] lg:tw-mt-[30vh] tw-mb-[1vh] lg:tw-mb-[2vh]"
+        >
+          Diabetic
+          <br />
+          Neuropathy
+        </h1>
+        <div
+          class="tw-relative tw-z-[1] tw-bg-white tw-ml-[0vh] lg:tw-ml-[32vh]"
+        >
+          <div
+            class="tw-font-normal tw-text-[2.1vh] tw-text-[#545454] tw-mt-[2vh] lg:tw-mt-[5vh]"
+          >
+            The potential to touch
+            <b>35+ million lives</b>
+            Our diabetic neuropathy device has the potential to touch and better
+            the lives of about 36 million people in the country annually. It can
+            save about 10 million from amputation, disability and the physical
+            and mental trauma associated with these.
+          </div>
+        </div>
+      </div>
+      <div
+        class="tw-h-full tw-w-[100%] lg:tw-w-[50%] tw-pl-0 lg:tw-pl-4 tw-relative tw-overflow-hidden lg:tw-overflow-visible"
+      >
+        <img
+          src="assets/icons/diabetic.png"
+          class="tw-absolute tw-right-0 lg:tw-right-0 tw-left-0 lg:tw-left-auto tw-m-auto lg:tw-m-0 tw-h-[100%] lg:tw-h-[100%] tw-w-[80%] lg:tw-w-[80%]"
+          style="object-fit: contain;"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+  </ng-template>
+  <!-- <ng-template swiperSlide let-data>
+
+
+    <div class="tw-ml-[16px]  lg:tw-ml-[80px] tw-mt-[80px] xl:tw-mt-[80px]">
+      <div class="tw-flex tw-flex-col lg:tw-flex-row tw-h-[100vh] tw-mr-[68px] tw-mt-[0vh] lg:tw-mt-[16vh]"
+        style="background-color: white !important;">
+        <div
+          class="tw-h-auto lg:tw-h-[70vh] tw-flex tw-items-end tw-justify-center lg:tw-justify-end tw-ml-[7%] tw-pr-[10px] lg:tw-pr-[0px] lg:tw-ml-[0%] tw-w-[86%] lg:tw-w-[45%]">
+
+
+          <h1
+            class="tw-w-[40%] tw-text-[#2F176D] tw-font-bold tw-text-[3.2vh] lg:tw-text-[4vw] tw-mt-[0vh] lg:tw-mt-[2vh] tw-mb-[1vh] lg:tw-mb-[2vh]">
+            Our Objectives
+
+          </h1>
+
+
+        </div>
+        <div
+          class="tw-h-auto lg:tw-h-full tw-pr-[10px] lg:tw-pr[0px] tw-mt-[10px] lg:tw-mt-[0px] tw-ml-[11%] lg:tw-ml-[0%] tw-w-[86%] lg:tw-w-[55%]">
+
+
+
+          <div class=" tw-relative tw-z-[1] tw-h-[55vh]">
+
+            <div style="box-shadow: white 0px -90px 40px -2em inset;" class="tw-absolute tw-bottom-0 tw-w-full tw-h-[25vh] tw-z-[2]">
+
+            </div>
+
+
+            <div class="tw-font-normal tw-h-full tw-text-[2.1vh] lg:tw-text-[3vh] tw-text-[#545454] tw-mt-[2vh] lg:tw-mt-[5vh]">
+
+              <swiper [loop]="true" direction="vertical" [autoplay]="{
+                delay: 2000
+                }" [watchSlidesProgress]="true" [slidesPerView]="2" class="mySwiper" #swiper>
+
+                <ng-template swiperSlide let-data>
+
+                  <div class="tw-flex tw-items-center tw-justify-between">
+                    <div class="tw-text-[#2F116E] tw-text-[2.8vh] lg:tw-text-[2.2vw]">
+                      1
+                    </div>
+                    <div class="tw-mx-[30px]">
+                      <img src="assets/icons/objective.png" class="tw-h-[150px] tw-w-[150px]" alt="" srcset="">
+                    </div>
+                    <div class="tw-font-normal tw-text-[2.1vh] md:tw-text-[3vh] tw-text-[#545454] tw-mr-3 lg:tw-mr-[68px] ">
+                      To use emerging technologies such as AI, ML and IOT for sustainable, scalable solutions to important clinical
+                      problems.
+                    </div>
+                  </div>
+                </ng-template>
+                <ng-template swiperSlide>
+
+                  <div class="tw-flex tw-items-center tw-justify-between">
+                    <div class="tw-text-[#2F116E] tw-text-[2.8vh] lg:tw-text-[2.2vw]">
+                      2
+                    </div>
+                    <div class="tw-mx-[30px]">
+                      <img src="assets/icons/objective.png" class="tw-h-[150px] tw-w-[150px]" alt="" srcset="">
+                    </div>
+                    <div class="tw-font-normal tw-text-[2.1vh] md:tw-text-[3vh] tw-text-[#545454] tw-mr-3 lg:tw-mr-[68px] ">
+                      To mentor, refine and validate the ideas of innovators by involving medical experts throughout the product life cycle.
+                    </div>
+                  </div>
+                </ng-template>
+                <ng-template swiperSlide>
+
+                  <div class="tw-flex tw-items-center tw-justify-between">
+                    <div class="tw-text-[#2F116E] tw-text-[2.8vh] lg:tw-text-[2.2vw]">
+                      3
+                    </div>
+                    <div class="tw-mx-[30px]">
+                      <img src="assets/icons/objective.png" class="tw-h-[150px] tw-w-[150px]" alt="" srcset="">
+                    </div>
+                    <div class="tw-font-normal tw-text-[2.1vh] md:tw-text-[3vh] tw-text-[#545454] tw-mr-3 lg:tw-mr-[68px] ">
+                      To use emerging technologies such as AI, ML and IOT for sustainable, scalable solutions to important clinical
+                      problems.
+                    </div>
+                  </div>
+                </ng-template>
+
+              </swiper>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </ng-template> -->
+  <!-- <ng-template swiperSlide let-data>
+
+
+    <div class="tw-pl-[16px]  lg:tw-pl-[80px] tw-pt-[68px] xl:tw-pt-[80px] tw-h-[100vh]">
+      <div class="tw-flex tw-pl-[6vh] lg:tw-pl-[0px] tw-flex-col lg:tw-flex-row tw-h-full" style="background-color: white !important;">
+        <div
+          class="tw-h-auto lg:tw-h-[70vh] tw-flex tw-items-center tw-justify-start lg:tw-justify-end tw-pr-[10px] lg:tw-pr-[0px] tw-w-[100%] lg:tw-w-[45%]">
+
+
+          <h1 class="tw-text-[#2F176D] tw-font-bold tw-text-[4.5vh] lg:tw-text-[6vw] tw-mt-[0vh] lg:tw-mt-[2vh] tw-mb-[1vh] lg:tw-mb-[2vh]">
+            Key
+            Differentiators
+            for Z21
+          </h1>
+
+
+        </div>
+        <div
+          class="tw-h-[56vh] lg:tw-h-[70vh] tw-flex tw-flex-col tw-justify-between  tw-pr-[10px] lg:tw-pr[64px] tw-mt-[10px] lg:tw-mt-[0px]  tw-w-[100%] lg:tw-w-[55%]">
+
+
+
+          <div class="tw-flex tw-justify-start tw-items-start  ">
+            <div
+              class=" tw-text-[2.1vh] tw-min-w-[120px] lg:tw-min-w-[179px] tw-max-w-[120px] lg:tw-max-w-[179px] tw-pr-[10px] lg:tw-text-[3vh] tw-font-bold tw-text-black">
+              Involment of <br> clinicians
+            </div>
+
+
+            <div class="tw-w-[80%] tw-font-normal tw-text-[2.1vh] lg:tw-text-[3vh] tw-text-[#545454]">
+              Clinicals to be involved through the product cycle.Will ensure product for, acceptance & increased accessibility
+
+
+
+
+            </div>
+          </div>
+          <div class="tw-flex tw-justify-start tw-items-start  ">
+            <div
+              class="tw-text-[2.1vh] tw-min-w-[120px] lg:tw-min-w-[179px] tw-max-w-[120px] lg:tw-max-w-[179px] tw-pr-[10px] lg:tw-text-[3vh] tw-font-bold tw-text-black">
+              Focus on 3-4 high <br> impact areas
+            </div>
+
+
+            <div class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[3vh] tw-text-[#545454]">
+              Cancer (Oral, Cevical, Breast) Respiatory, Diabetes and Cardiovascular diseases; focus expected to impact scress rate
+
+
+
+            </div>
+          </div>
+          <div class="tw-flex tw-justify-start tw-items-start ">
+            <div
+              class="tw-text-[2.1vh] tw-min-w-[120px] lg:tw-min-w-[179px] tw-max-w-[120px] lg:tw-max-w-[179px] tw-pr-[10px] lg:tw-text-[3vh] tw-font-bold tw-text-black">
+              Creation of a <br> collabrative ecosystem
+            </div>
+            <div class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[3vh] tw-text-[#545454]">
+              Technology, investors, industry experts, domain experts
+            </div>
+          </div>
+          <div class="tw-flex tw-justify-start tw-items-start ">
+            <div
+              class=" tw-text-[2.1vh] tw-min-w-[120px] lg:tw-min-w-[179px] tw-max-w-[120px] lg:tw-max-w-[179px] tw-pr-[10px] lg:tw-text-[3vh] tw-font-bold tw-text-black">
+              Structured <br> Processes
+            </div>
+            <div class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[3vh] tw-text-[#545454]">
+              Well defined processes from idea generation to product licencing
+            </div>
+          </div>
+          <div class="tw-flex tw-justify-start tw-items-start ">
+            <div
+              class=" tw-text-[2.1vh] tw-min-w-[120px] lg:tw-min-w-[179px] tw-max-w-[120px] lg:tw-max-w-[179px] tw-pr-[10px] lg:tw-text-[3vh] tw-font-bold tw-text-black">
+              Better market <br> access
+            </div>
+            <div class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[3vh] tw-text-[#545454]">
+              Strong access to hospitals & connects with industry professionals.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </ng-template> -->
+</swiper>
+<!-- </div> -->

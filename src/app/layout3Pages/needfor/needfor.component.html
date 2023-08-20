@@ -1,0 +1,278 @@
+<div class="tw-w-full tw-flex tw-flex-col tw-grow tw-h-full">
+  <div
+    class="tw-right-3 tw-absolute tw-z-[2] lg:tw-right-[68px] tw-mb-[20px] tw-mt-[30px] xl:tw-mt-[50px]"
+  >
+    <div
+      class="tw-mr-3 md:tw-mr-[68px] tw-h-[60px] tw-w-[60px] tw-items-center tw-justify-center tw-flex !tw-rounded-full tw-cursor-pointer hover:tw-bg-[#e5e5ee] hover:tw-bg-opacity-[0.95] tw-transition-all tw-duration-[0.3s]"
+      (click)="openNavbar()"
+    >
+      <img
+        src="assets/icons/menu.png"
+        button
+        class="tw-w-[25px] md:tw-w-[36px] tw-h-[11px] md:tw-h-[16px]"
+        alt=""
+        srcset=""
+      />
+    </div>
+    hover:tw-bg-[#e5e5ee]
+  </div>
+  <div
+    class="tw-absolute tw-z-[2] tw-left-[16px] lg:tw-left-[80px] tw-mb-[20px] xl:tw-mb-[50px] tw-mt-[20px] xl:tw-mt-[50px]"
+  >
+    <div>
+      <img
+        src="assets/icons/logoblue.png"
+        (click)="moveToHome()"
+        class="tw-w-[118px] lg:tw-w-[219px] tw-cursor-pointer"
+        alt=""
+        srcset=""
+      />
+    </div>
+  </div>
+
+  <div class="tw-absolute tw-top-[39vh] tw-z-[2]">
+    <div class="tw-flex tw-flex-col tw-pl-[16px]">
+      <div
+        class="tw-text-[12px] tw-font-medium tw-mb-[25px] tw-w-[22px] tw-h-[3px] tw-leading-none {{
+          activeIndex == 0 ? 'tw-bg-[#1A82E3]' : 'tw-bg-[#00000033]'
+        }} "
+      ></div>
+      <div
+        class="tw-text-[12px] tw-font-medium tw-mb-[25px] tw-w-[22px] tw-h-[3px] tw-leading-none {{
+          activeIndex == 1 ? 'tw-bg-[#1A82E3]' : 'tw-bg-[#00000033]'
+        }} "
+      ></div>
+      <div
+        class="tw-text-[12px] tw-font-medium tw-mb-[25px] tw-w-[22px] tw-h-[3px] tw-leading-none {{
+          activeIndex == 2 ? 'tw-bg-[#1A82E3]' : 'tw-bg-[#00000033]'
+        }} "
+      ></div>
+      <div
+        class="tw-text-[12px] tw-font-medium tw-mb-[25px] tw-w-[22px] tw-h-[3px] tw-leading-none {{
+          activeIndex == 3 ? 'tw-bg-[#1A82E3]' : 'tw-bg-[#00000033]'
+        }} "
+      ></div>
+    </div>
+  </div>
+
+  <swiper
+    (slideChange)="onSlideChange($event)"
+    [config]="config"
+    [direction]="'vertical'"
+    #swiper
+    [creativeEffect]="{
+      prev: {
+        shadow: false,
+        translate: [0, 0, -1300]
+      },
+      next: {
+        translate: [0, '100%', 0]
+      }
+    }"
+  >
+    <!-- translate: ['100%', 0, 0] -->
+    <!-- translate: [0, 0, -400] -->
+    <ng-template swiperSlide let-data>
+      <div
+        class="tw-pl-[16px] lg:tw-pl-[80px] tw-pt-[61px] xl:tw-pt-[80px] tw-h-[100vh]"
+      >
+        <div
+          class="tw-flex tw-flex-col lg:tw-flex-row tw-h-full tw-mt-[0vh] lg:tw-mt-[4vh] tw-pl-[5vh] md:tw-pl-[5vh] tw-mr-[12px] lg:tw-mr-0"
+          style="background-color: white !important;"
+        >
+          <div
+            class="tw-h-auto tw-flex tw-justify-start lg:tw-justify-end lg:tw-h-full tw-w-[100%] lg:tw-w-[40%]"
+          >
+            <img
+              src="assets/icons/person.gif"
+              class="tw-h-[23vh] tw-w-[23vh] md:tw-h-[28vh] md:tw-w-[28vh] lg:tw-h-[50vh] lg:tw-w-[50vh] tw-mr-[0vh] lg:tw-mr-[8vh]"
+              alt=""
+              srcset=""
+            />
+          </div>
+          <div
+            class="tw-h-auto lg:tw-h-full tw-mt-[10px] lg:tw-mt-[0px] tw-w-[100%] lg:tw-w-[40%]"
+          >
+            <h1
+              class="tw-text-[#2F176D] tw-leading-[9vw] lg:tw-leading-[5.6vw] tw-font-bold tw-text-[3.2vw] lg:tw-text-[5vw] tw-mt-[0vh] lg:tw-mt-[2vh] tw-mb-[1vh] lg:tw-mb-[2vh]"
+            >
+              The growing menace of NCDs
+            </h1>
+
+            <div class="tw-relative tw-z-[1] tw-bg-white">
+              <div
+                class="tw-font-normal tw-text-[2.1vh] tw-text-[#545454] tw-mt-[2vh] lg:tw-mt-[0vh]"
+              >
+                In 2015, about 40 million deaths worldwide were caused by non -
+                communicable diseases like Cancer, Diabetes, Chest diseases and
+                Hypertension. Each of these diseases have some common
+                characteristics -
+                <ul class="!tw-pl-[1rem]">
+                  <li>
+                    They respond to treatment better when detected and treated
+                    in the early stages.
+                  </li>
+                  <li>Early diagnosis and treatment plans cost less.</li>
+                  <li>
+                    These conditions need constant monitoring by way of tests
+                    and regular consults with doctors.
+                  </li>
+                </ul>
+
+                Z21 solutions leverage technology to make this kind of
+                monitoring possible remotely and constantly, thereby saving
+                millions of lives.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template swiperSlide let-data>
+      <div class="tw-ml-[16px] lg:tw-ml-[80px] tw-mt-[68px] xl:tw-mt-[80px]">
+        <div
+          class="tw-flex tw-flex-col lg:tw-flex-row tw-h-[100vh] tw-mt-[0vh] lg:tw-mt-[20vh] tw-ml-[10%] md:tw-ml-[5%] tw-mr-[12px] lg:tw-mr-0"
+          style="background-color: white !important;"
+        >
+          <div
+            class="tw-h-auto tw-flex tw-justify-start lg:tw-justify-end lg:tw-h-full tw-w-[100%] lg:tw-w-[40%]"
+          >
+            <img
+              src="assets/icons/person2.gif"
+              class="tw-h-[23vh] tw-w-[23vh] md:tw-h-[28vh] md:tw-w-[28vh] lg:tw-h-[50vh] lg:tw-w-[50vh] tw-mr-[0vh] lg:tw-mr-[8vh]"
+              alt=""
+              srcset=""
+            />
+          </div>
+          <div
+            class="tw-h-auto lg:tw-h-full lg:tw-pr[0px] tw-mt-[10px] lg:tw-mt-[0px] tw-w-[100%] lg:tw-w-[40%]"
+          >
+            <h1
+              class="tw-text-[#2F176D] tw-leading-[9vw] lg:tw-leading-[5.6vw] tw-font-bold tw-text-[3.2vh] lg:tw-text-[5vw] tw-mt-[0vh] lg:tw-mt-[2vh] tw-mb-[1vh] lg:tw-mb-[2vh]"
+            >
+              Indian healthcare and its challenges
+            </h1>
+
+            <div class="tw-relative tw-z-[1] tw-bg-white">
+              <div
+                class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[2.1vh] tw-text-[#545454] tw-mt-[2vh] lg:tw-mt-[5vh]"
+              >
+                Access to quality healthcare is a challenge not only in India,
+                but across the developing world. India especially, suffers from
+                a huge deficit of doctors and nurses. Such challenges can only
+                be overcome by identifying specific problems and harnessing
+                technologies to meet them.
+                <b>
+                  IOT based monitoring devices, AI for diagnosis and risk
+                  profiling, networked imaging and AI guided treatment
+                </b>
+                are some of the technologies that Z21 products leverage to
+                transform Indian healthcare.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <!--  -->
+
+    <ng-template swiperSlide let-data>
+      <div class="tw-ml-[16px] lg:tw-ml-[80px] tw-mt-[68px] xl:tw-mt-[80px]">
+        <div
+          class="tw-flex tw-flex-col lg:tw-flex-row tw-h-[100vh] tw-mt-[0vh] lg:tw-mt-[20vh] tw-ml-[10%] md:tw-ml-[5%] tw-mr-[12px] lg:tw-mr-0"
+          style="background-color: white !important;"
+        >
+          <div
+            class="tw-h-auto tw-flex tw-justify-start lg:tw-justify-end lg:tw-h-full tw-w-[100%] lg:tw-w-[40%]"
+          >
+            <img
+              src="assets/icons/covidcloud.gif"
+              class="tw-h-[23vh] tw-w-[23vh] md:tw-h-[28vh] md:tw-w-[28vh] lg:tw-h-[50vh] lg:tw-w-[50vh] tw-mr-[0vh] lg:tw-mr-[8vh]"
+              alt=""
+              srcset=""
+            />
+          </div>
+          <div
+            class="tw-h-auto lg:tw-h-full lg:tw-pr[0px] tw-mt-[10px] lg:tw-mt-[0px] tw-w-[100%] lg:tw-w-[40%]"
+          >
+            <h1
+              class="tw-text-[#2F176D] tw-leading-[9vw] lg:tw-leading-[5.6vw] tw-font-bold tw-text-[3.2vh] lg:tw-text-[5vw] tw-mt-[0vh] lg:tw-mt-[2vh] tw-mb-[1vh] lg:tw-mb-[2vh]"
+            >
+              The silver lining in the COVID cloud
+            </h1>
+
+            <div class="tw-relative tw-z-[1] tw-bg-white">
+              <div
+                class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[2.1vh] tw-text-[#545454] tw-mt-[2vh] lg:tw-mt-[5vh]"
+              >
+                COVID has wreaked havoc across the world in many ways and
+                brought to the forefront, the need for access to good quality
+                healthcare. However, in its aftermath, there is also an
+                increased level of acceptance of new methods of healthcare - in
+                the form of telehealth and remote monitoring.
+                <br />
+                <br />
+
+                Z21 is responding to this change by designing and developing
+                state-of-the art healthcare tech. products and services and
+                making them extremely accessible.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template swiperSlide let-data>
+      <div class="tw-ml-[16px] lg:tw-ml-[80px] tw-mt-[68px] xl:tw-mt-[80px]">
+        <div
+          class="tw-flex tw-flex-col lg:tw-flex-row tw-h-[100vh] tw-mt-[0vh] lg:tw-mt-[20vh] tw-ml-[10%] md:tw-ml-[5%] tw-mr-[12px] lg:tw-mr-0"
+          style="background-color: white !important;"
+        >
+          <div
+            class="tw-h-auto tw-flex tw-justify-start lg:tw-justify-end lg:tw-h-full tw-w-[100%] lg:tw-w-[40%]"
+          >
+            <img
+              src="assets/icons/covidcloud.gif"
+              class="tw-h-[23vh] tw-w-[23vh] md:tw-h-[28vh] md:tw-w-[28vh] lg:tw-h-[50vh] lg:tw-w-[50vh] tw-mr-[0vh] lg:tw-mr-[8vh]"
+              alt=""
+              srcset=""
+            />
+          </div>
+          <div
+            class="tw-h-auto lg:tw-h-full lg:tw-pr[0px] tw-mt-[10px] lg:tw-mt-[0px] tw-w-[100%] lg:tw-w-[40%]"
+          >
+            <h1
+              class="tw-text-[#2F176D] tw-leading-[9vw] lg:tw-leading-[5.6vw] tw-font-bold tw-text-[3.2vh] lg:tw-text-[5vw] tw-mt-[0vh] lg:tw-mt-[2vh] tw-mb-[1vh] lg:tw-mb-[2vh]"
+            >
+              Healthtech innovations and their way forward
+            </h1>
+
+            <div class="tw-relative tw-z-[1] tw-bg-white">
+              <div
+                class="tw-font-normal tw-text-[2.1vh] lg:tw-text-[2.1vh] tw-text-[#545454] tw-mt-[2vh] lg:tw-mt-[5vh]"
+              >
+                Indian health-tech product companies face many challenges at
+                both the product development stage as well as the
+                commercialization stage. Lack of structure for idea generation
+                and filtration, low synergy between clinicians and
+                technologists, absence of relevant data due to lack of
+                documentation and little or no market access for clinical
+                testing Many of these problems can be solved if a larger
+                overarching problem - the lack of committed involvement of
+                medical experts throughout the product development cycle - is
+                taken care of.
+                <br />
+                <br />
+
+                Z21 solves for this by involving senior medical experts
+                throughout the life cycle of each of its products.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </swiper>
+</div>

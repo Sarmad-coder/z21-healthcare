@@ -1,0 +1,79 @@
+<div class="tw-bg-black tw-text-white tw-relative tw-h-full">
+  <div (click)="isIframeAvilable=true" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="
+      cursor: pointer;
+
+      background-size: cover;
+      z-index: 2;
+    "
+    class="round hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-flex tw-justify-center tw-items-center tw-h-[11vh] tw-w-[11vh] md:tw-w-[14vh] md:tw-h-[14vh] tw-right-3 md:tw-right-[68px] tw-bottom-1 tw-absolute tw-rounded-[100%] tw-bg-[#4e681b]">
+    <img src="assets/icons/play.png" style="width: 3vh;" alt="" srcset="" />
+  </div>
+
+  <div class="tw-flex tw-pb-[20px] tw-pl-3 tw-flex-col tw-absolute tw-z-[2] tw-bottom-0">
+    <div class="menu-icon tw-cursor-pointer">
+      <a href="https://www.twitter.com/" target="_blank">
+        <img src="assets/icons/twitter.png" class="instaImg tw-mb-[3px] tw-mr-[1px]" />
+      </a>
+    </div>
+    <div class="menu-icon tw-cursor-pointer">
+      <a href="https://www.instagram.com/" target="_blank">
+        <img src="assets/icons/insta.png" class="instaImg tw-mb-[3px] tw-mr-[1px]" />
+      </a>
+    </div>
+    <div class="menu-icon tw-cursor-pointer">
+      <a href="https://www.linkedin.com/" target="_blank">
+        <img src="assets/icons/linkedin.png" class="tw-mb-[5px]" />
+      </a>
+    </div>
+    <!-- <div class="menu-icon">
+      <img src="assets/icons/whatsapp.png">
+    </div>
+    <div class="menu-icon">
+      <img src="assets/icons/twitter.png">
+    </div> -->
+  </div>
+  <div class="tw-w-full tw-flex tw-flex-col tw-grow tw-h-full tw-pl-[16px] md:tw-pl-[80px]">
+    <div class="tw-flex tw-justify-between tw-items-center tw-mb-[20px] xl:tw-mb-[50px] tw-mt-[20px] xl:tw-mt-[50px]">
+      <div>
+        <img src="assets/icons/logo.png" class="tw-w-[156px] md:tw-w-[219px]" alt="" srcset="" />
+      </div>
+      <div
+        class="tw-mr-3 md:tw-mr-[68px] tw-h-[60px] tw-w-[60px] tw-items-center tw-justify-center tw-flex !tw-rounded-full tw-cursor-pointer hover:tw-bg-[#e5e5ee] hover:tw-bg-opacity-[0.95] tw-transition-all tw-duration-[0.3s]"
+        (click)="openNavbar()">
+        <img src="assets/icons/menu.png" button class="tw-w-[25px] md:tw-w-[36px] tw-h-[11px] md:tw-h-[16px]" alt=""
+          srcset="" />
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!-- Modal0 -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content tw-bg-transparent">
+      <img (click)="isIframeAvilable=false" data-bs-dismiss="modal" aria-label="Close"
+        class="hover:tw-transform hover:tw-scale-[1.2] tw-transition-all tw-duration-[0.3s] tw-h-[9vh] tw-cursor-pointer tw-right-[-5%] tw-top-[-9%] tw-z-[2] tw-absolute"
+        src="assets/icons/greencross.png" alt="" srcset="" />
+
+      <div *ngIf="isIframeAvilable" class="modal-body tw-p-0">
+        <iframe *ngIf="index==0" class="tw-w-[100%] tw-h-[300px] lg:tw-h-[600px]"
+          src="https://www.youtube.com/embed/K4Si8igL1TM" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+
+        <iframe *ngIf="index==1" class="tw-w-[100%] tw-h-[300px] lg:tw-h-[600px]" src="https://www.youtube.com/embed/xYv3MNNvLYI"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+
+        <iframe *ngIf="index==2"  class="tw-w-[100%] tw-h-[300px] lg:tw-h-[600px]" src="https://www.youtube.com/embed/wznpMFdUzVc" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
